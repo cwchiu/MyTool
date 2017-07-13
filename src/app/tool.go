@@ -17,6 +17,7 @@ func main() {
     SetupFsCommand( rootCmd )
     SetupWebCommand( rootCmd )
     SetupServerCommand( rootCmd )
+    SetupHashCommand( rootCmd )
     commands.SetupMD2HtmlCommand( rootCmd )
 	rootCmd.Execute()
 }
