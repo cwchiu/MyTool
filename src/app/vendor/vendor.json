@@ -15,6 +15,24 @@
 			"revisionTime": "2016-12-24T14:14:13Z"
 		},
 		{
+			"checksumSHA1": "LDsOOFd/3TnT4oSGhAQwl8kH1gk=",
+			"path": "github.com/boombuler/barcode",
+			"revision": "56ef0af91246fb5279df4f87bc3daf1bf7cb9e89",
+			"revisionTime": "2017-06-18T05:38:12Z"
+		},
+		{
+			"checksumSHA1": "6NxNXk5Yui/mRT38b1cDJF4yzLk=",
+			"path": "github.com/boombuler/barcode/qr",
+			"revision": "56ef0af91246fb5279df4f87bc3daf1bf7cb9e89",
+			"revisionTime": "2017-06-18T05:38:12Z"
+		},
+		{
+			"checksumSHA1": "wUElvB533ghOumY5j138tOEetik=",
+			"path": "github.com/boombuler/barcode/utils",
+			"revision": "56ef0af91246fb5279df4f87bc3daf1bf7cb9e89",
+			"revisionTime": "2017-06-18T05:38:12Z"
+		},
+		{
 			"checksumSHA1": "kdrh+N+tJm4iK3O8i/nZZKjk3mk=",
 			"path": "github.com/elazarl/goproxy",
 			"revision": "aacba83f36a55ac31cbb71c06547a328c0cd1604",

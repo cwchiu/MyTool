@@ -20,5 +20,7 @@ func main() {
     commands.SetupHashCommand( rootCmd )
     commands.SetupMD2HtmlCommand( rootCmd )
     commands.SetupDateCommand( rootCmd )
+    commands.SetupBarCodeCommand( rootCmd )
+    
 	rootCmd.Execute()
 }
