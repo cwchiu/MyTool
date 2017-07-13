@@ -15,6 +15,12 @@
 			"revisionTime": "2016-12-24T14:14:13Z"
 		},
 		{
+			"checksumSHA1": "kdrh+N+tJm4iK3O8i/nZZKjk3mk=",
+			"path": "github.com/elazarl/goproxy",
+			"revision": "aacba83f36a55ac31cbb71c06547a328c0cd1604",
+			"revisionTime": "2017-04-13T18:21:29Z"
+		},
+		{
 			"checksumSHA1": "UYDU8nJJ/RXSTrR+dgQodj78uQI=",
 			"path": "github.com/inconshreveable/mousetrap",
 			"revision": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75",

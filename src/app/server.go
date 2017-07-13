@@ -14,6 +14,7 @@ func SetupServerCommand(parentCmd *cobra.Command) {
 	server.SetupEchoCommand(rootCmd)
 	server.SetupQuoteCommand(rootCmd)
 	server.SetupDaytimeCommand(rootCmd)
+	server.SetupProxyCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
