@@ -9,5 +9,6 @@ func main() {
 	rootCmd := &cobra.Command{Use: "tool"}
     SetupFsCommand( rootCmd )
     SetupWebCommand( rootCmd )
+    SetupServerCommand( rootCmd )
 	rootCmd.Execute()
 }
