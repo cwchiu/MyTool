@@ -22,6 +22,7 @@ func main() {
     commands.SetupDateCommand( rootCmd )
     commands.SetupBarCodeCommand( rootCmd )
     commands.SetupBase64Command( rootCmd )
+    commands.SetupHexCommand( rootCmd )
     
 	rootCmd.Execute()
 }
