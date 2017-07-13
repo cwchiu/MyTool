@@ -81,6 +81,12 @@
 			"revisionTime": "2015-12-06T19:48:10Z"
 		},
 		{
+			"checksumSHA1": "8jdAN2n9kJasxFmikoyDZAbv8ig=",
+			"path": "github.com/kr/pty",
+			"revision": "2c10821df3c3cf905230d078702dfbe9404c9b23",
+			"revisionTime": "2017-03-07T14:53:09Z"
+		},
+		{
 			"checksumSHA1": "LeTiX0a4JFTKBE0FZOX8aH3d63Q=",
 			"path": "github.com/mattn/go-colorable",
 			"revision": "3fa8c76f9daed4067e4a806fb7e4dc86455c6d6a",
