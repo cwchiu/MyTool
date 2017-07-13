@@ -12,7 +12,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupTlsVersionCommand(rootCmd)
 	web.SetupUn53shareCommand(rootCmd)
 	web.SetupDemd5Command(rootCmd)
+	web.SetupDownloadCommand(rootCmd)
 
-	// rootCmd.Execute()
     parentCmd.AddCommand(rootCmd)
 }
