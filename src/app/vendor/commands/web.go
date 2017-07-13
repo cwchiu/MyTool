@@ -1,10 +1,9 @@
-package main
+package commands
 
 import (
 	"github.com/spf13/cobra"
-    web "commands/web"
+    "commands/web"
 )
-
 
 func SetupWebCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{Use: "web"}

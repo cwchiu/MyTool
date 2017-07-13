@@ -14,10 +14,10 @@ func main() {
 		}
 	}()
 	rootCmd := &cobra.Command{Use: "tool"}
-    SetupFsCommand( rootCmd )
-    SetupWebCommand( rootCmd )
-    SetupServerCommand( rootCmd )
-    SetupHashCommand( rootCmd )
+    commands.SetupFsCommand( rootCmd )
+    commands.SetupWebCommand( rootCmd )
+    commands.SetupServerCommand( rootCmd )
+    commands.SetupHashCommand( rootCmd )
     commands.SetupMD2HtmlCommand( rootCmd )
 	rootCmd.Execute()
 }
