@@ -17,6 +17,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupIPInfoCommand(rootCmd)
 	web.SetupUrlEncodeCommand(rootCmd)
 	web.SetupUrlDecodeCommand(rootCmd)
+	web.SetupExchangeRateCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
