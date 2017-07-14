@@ -23,6 +23,7 @@ func main() {
     commands.SetupBarCodeCommand( rootCmd )
     commands.SetupBase64Command( rootCmd )
     commands.SetupHexCommand( rootCmd )
+    commands.SetupJsonCommand( rootCmd )
     
 	rootCmd.Execute()
 }
