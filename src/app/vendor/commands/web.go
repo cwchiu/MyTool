@@ -13,6 +13,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupUn53shareCommand(rootCmd)
 	web.SetupDemd5Command(rootCmd)
 	web.SetupDownloadCommand(rootCmd)
+	web.SetupGoogleMapGeocodeCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
