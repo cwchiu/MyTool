@@ -15,6 +15,8 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupDownloadCommand(rootCmd)
 	web.SetupGoogleMapGeocodeCommand(rootCmd)
 	web.SetupIPInfoCommand(rootCmd)
+	web.SetupUrlEncodeCommand(rootCmd)
+	web.SetupUrlDecodeCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
