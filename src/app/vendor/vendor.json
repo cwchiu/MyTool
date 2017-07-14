@@ -141,6 +141,12 @@
 			"revisionTime": "2017-05-05T04:36:39Z"
 		},
 		{
+			"checksumSHA1": "7Z/c2EP7sQ5vaN9q0cerXTwx9Bw=",
+			"path": "github.com/qianlnk/guerrillamail",
+			"revision": "356e8e64acc3452c84aa08f46bcf569a44fd6218",
+			"revisionTime": "2017-05-09T07:12:38Z"
+		},
+		{
 			"checksumSHA1": "MIslMYAzyWPsn5xbMfaZupVhHy0=",
 			"path": "github.com/russross/blackfriday",
 			"revision": "067529f716f4c3f5e37c8c95ddd59df1007290ae",

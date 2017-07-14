@@ -24,6 +24,7 @@ func main() {
     commands.SetupBase64Command( rootCmd )
     commands.SetupHexCommand( rootCmd )
     commands.SetupJsonCommand( rootCmd )
+    commands.SetupGuerrillamailCommand( rootCmd )
     
 	rootCmd.Execute()
 }
