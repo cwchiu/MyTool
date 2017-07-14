@@ -25,6 +25,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupGoogleDnsResolveCommand(rootCmd)
 	web.SetupGenChineseNameCommand(rootCmd)
 	web.SetupYoudaoTranslateCommand(rootCmd)
+	web.SetupGistCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
