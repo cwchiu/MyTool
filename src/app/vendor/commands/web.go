@@ -6,7 +6,10 @@ import (
 )
 
 func SetupWebCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "web"}
+	rootCmd := &cobra.Command{
+        Use: "web",
+        Short: "Web 服務相關",
+    }
 
 	web.SetupMyipCommand(rootCmd)
 	web.SetupTlsVersionCommand(rootCmd)
@@ -18,6 +21,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupUrlEncodeCommand(rootCmd)
 	web.SetupUrlDecodeCommand(rootCmd)
 	web.SetupExchangeRateCommand(rootCmd)
+	web.SetupYoudaoDictCommand(rootCmd)
 
     parentCmd.AddCommand(rootCmd)
 }
