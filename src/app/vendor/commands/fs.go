@@ -1,8 +1,8 @@
 package commands
 
 import (
+	fs "commands/fs"
 	"github.com/spf13/cobra"
-    fs "commands/fs"
 )
 
 func SetupFsCommand(parentCmd *cobra.Command) {
@@ -21,6 +21,6 @@ func SetupFsCommand(parentCmd *cobra.Command) {
 	fs.SetupCpCommand(rootCmd)
 	fs.SetupNlCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 	// rootCmd.Execute()
 }

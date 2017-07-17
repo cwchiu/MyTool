@@ -25,6 +25,7 @@ func main() {
     commands.SetupHexCommand( rootCmd )
     commands.SetupJsonCommand( rootCmd )
     commands.SetupGuerrillamailCommand( rootCmd )
+    commands.SetupUrlCommand( rootCmd )
     
 	rootCmd.Execute()
 }

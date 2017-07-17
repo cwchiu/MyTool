@@ -1,10 +1,9 @@
 package commands
 
 import (
+	server "commands/server"
 	"github.com/spf13/cobra"
-    server "commands/server"
 )
-
 
 func SetupServerCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{Use: "server"}
@@ -19,5 +18,5 @@ func SetupServerCommand(parentCmd *cobra.Command) {
 	server.SetupFtpCommand(rootCmd)
 	server.SetupSSHCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }

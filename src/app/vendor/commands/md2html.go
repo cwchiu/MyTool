@@ -51,8 +51,8 @@ func SetupMD2HtmlCommand(rootCmd *cobra.Command) {
 			fout.WriteString(string(output))
 			fout.WriteString("</body></html>")
 			if flagvar {
-                open.Start(file)
-            }
+				open.Start(file)
+			}
 			fmt.Println(file)
 			// time.Sleep(10)
 		},

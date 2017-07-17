@@ -1,15 +1,15 @@
 package commands
 
 import (
+	guerrillamail "commands/guerrillamail"
 	"github.com/spf13/cobra"
-    guerrillamail "commands/guerrillamail"
 )
 
 func SetupGuerrillamailCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{
-        Use: "guerrillamail",
-        Short: "臨時用郵件",
-    }
+		Use:   "guerrillamail",
+		Short: "臨時用郵件",
+	}
 
 	guerrillamail.SetupNewCommand(rootCmd)
 	guerrillamail.SetupListCommand(rootCmd)
@@ -17,5 +17,5 @@ func SetupGuerrillamailCommand(parentCmd *cobra.Command) {
 	guerrillamail.SetupFetchCommand(rootCmd)
 	guerrillamail.SetupDelCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }

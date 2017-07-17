@@ -1,15 +1,15 @@
 package commands
 
 import (
+	"commands/web"
 	"github.com/spf13/cobra"
-    "commands/web"
 )
 
 func SetupWebCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{
-        Use: "web",
-        Short: "Web 服務相關",
-    }
+		Use:   "web",
+		Short: "Web 服務相關",
+	}
 
 	web.SetupMyipCommand(rootCmd)
 	web.SetupTlsVersionCommand(rootCmd)
@@ -27,5 +27,5 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupYoudaoTranslateCommand(rootCmd)
 	web.SetupGistCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }

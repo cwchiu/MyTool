@@ -1,8 +1,8 @@
 package commands
 
 import (
+	barcode "commands/barcode"
 	"github.com/spf13/cobra"
-    barcode "commands/barcode"
 )
 
 func SetupBarCodeCommand(parentCmd *cobra.Command) {
@@ -12,5 +12,5 @@ func SetupBarCodeCommand(parentCmd *cobra.Command) {
 	// date.SetupT2SCommand(rootCmd)
 	// date.SetupS2TCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }

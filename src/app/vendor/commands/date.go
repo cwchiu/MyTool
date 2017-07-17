@@ -1,10 +1,9 @@
 package commands
 
 import (
+	date "commands/date"
 	"github.com/spf13/cobra"
-    date "commands/date"
 )
-
 
 func SetupDateCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{Use: "date"}
@@ -13,5 +12,5 @@ func SetupDateCommand(parentCmd *cobra.Command) {
 	date.SetupT2SCommand(rootCmd)
 	date.SetupS2TCommand(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }

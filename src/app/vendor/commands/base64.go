@@ -1,8 +1,8 @@
 package commands
 
 import (
+	base64 "commands/base64"
 	"github.com/spf13/cobra"
-    base64 "commands/base64"
 )
 
 func SetupBase64Command(parentCmd *cobra.Command) {
@@ -10,6 +10,6 @@ func SetupBase64Command(parentCmd *cobra.Command) {
 
 	base64.SetupEncodeCommand(rootCmd)
 	base64.SetupDecodeCommand(rootCmd)
-    
-    parentCmd.AddCommand(rootCmd)
+
+	parentCmd.AddCommand(rootCmd)
 }

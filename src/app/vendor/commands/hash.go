@@ -1,10 +1,9 @@
 package commands
 
 import (
+	hash "commands/hash"
 	"github.com/spf13/cobra"
-    hash "commands/hash"
 )
-
 
 func SetupHashCommand(parentCmd *cobra.Command) {
 	rootCmd := &cobra.Command{Use: "hash"}
@@ -16,5 +15,5 @@ func SetupHashCommand(parentCmd *cobra.Command) {
 	hash.SetupSha512Command(rootCmd)
 	hash.SetupCrc32Command(rootCmd)
 
-    parentCmd.AddCommand(rootCmd)
+	parentCmd.AddCommand(rootCmd)
 }
