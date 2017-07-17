@@ -27,6 +27,7 @@ func main() {
 	commands.SetupGuerrillamailCommand(rootCmd)
 	commands.SetupUrlCommand(rootCmd)
 	commands.SetupTaiwanPidCommand(rootCmd)
+	commands.SetupChinaPidCommand(rootCmd)
 
 	rootCmd.Execute()
 }
