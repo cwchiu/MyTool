@@ -39,7 +39,6 @@ func SetupTaiwanPidCommand(rootCmd *cobra.Command) {
 			} else {
 				sn += string(SEX[rand.Intn(len(SEX))])
 			}
-			fmt.Println(rand.Intn(len(NUM)))
 			for i := 0; i < 7; i++ {
 				sn = sn + string(NUM[rand.Intn(len(NUM))])
 			}
