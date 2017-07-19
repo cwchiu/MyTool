@@ -13,7 +13,10 @@ func main() {
 			fmt.Println(err.(string))
 		}
 	}()
-	rootCmd := &cobra.Command{Use: "tool"}
+	rootCmd := &cobra.Command{Use: "tool", Long: `我的個人常用工具
+    * Site: https://chuiwenchiu.wordpress.com
+    * Github: https://github.com/cwchiu/MyTool
+    `}
 	commands.SetupFsCommand(rootCmd)
 	commands.SetupWebCommand(rootCmd)
 	commands.SetupServerCommand(rootCmd)
