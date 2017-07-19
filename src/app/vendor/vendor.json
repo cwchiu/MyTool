@@ -111,6 +111,12 @@
 			"revisionTime": "2016-10-31T19:45:48Z"
 		},
 		{
+			"checksumSHA1": "3aVy3dTR/PwmSm613DGmKZnnQfs=",
+			"path": "github.com/mozillazg/go-pinyin",
+			"revision": "ff1ea6f92b184d58c766c60f96a7a9b5f30fb092",
+			"revisionTime": "2017-04-25T12:26:50Z"
+		},
+		{
 			"checksumSHA1": "i/HWCPddfU9O89OQWF4DJLc/xYY=",
 			"path": "github.com/naoina/go-stringutil",
 			"revision": "6b638e95a32d0c1131db0e7fe83775cbea4a0d0b",
