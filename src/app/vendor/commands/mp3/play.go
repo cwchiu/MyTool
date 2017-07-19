@@ -1,7 +1,6 @@
 package netcat
 
 import (
-	"fmt"
 	"github.com/hajimehoshi/go-mp3"
 	"github.com/hajimehoshi/oto"
 	"github.com/spf13/cobra"
