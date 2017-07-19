@@ -6,7 +6,7 @@ import (
 )
 
 func SetupFsCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "fs"}
+	rootCmd := &cobra.Command{Use: "fs", Short: "檔案相關操作"}
 
 	fs.SetupEmptyCommand(rootCmd)
 	fs.SetupInfoCommand(rootCmd)
