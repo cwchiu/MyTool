@@ -30,6 +30,7 @@ func main() {
 	commands.SetupChinaPidCommand(rootCmd)
 	commands.SetupPinyinCommand(rootCmd)
 	commands.SetupNetcatCommand(rootCmd)
+	commands.SetupJsCommand(rootCmd)
 
 	rootCmd.Execute()
 }
