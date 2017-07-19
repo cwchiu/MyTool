@@ -28,6 +28,8 @@ func main() {
 	commands.SetupUrlCommand(rootCmd)
 	commands.SetupTaiwanPidCommand(rootCmd)
 	commands.SetupChinaPidCommand(rootCmd)
+	commands.SetupPinyinCommand(rootCmd)
+	commands.SetupNetcatCommand(rootCmd)
 
 	rootCmd.Execute()
 }
