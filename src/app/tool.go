@@ -31,6 +31,7 @@ func main() {
 	commands.SetupPinyinCommand(rootCmd)
 	commands.SetupNetcatCommand(rootCmd)
 	commands.SetupJsCommand(rootCmd)
+	commands.SetupMp3Command(rootCmd)
 
 	rootCmd.Execute()
 }
