@@ -265,7 +265,6 @@ func SetupFtpCommand(rootCmd *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:   "ftp",
 		Short: "ftp Server",
-		Long:  `ftp Server`,
 		Run: func(cmd *cobra.Command, args []string) {
             if username == "" {
                 username = "guest"

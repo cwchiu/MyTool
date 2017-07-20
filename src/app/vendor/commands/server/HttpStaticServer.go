@@ -15,7 +15,6 @@ func SetupStaticCommand(rootCmd *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:   "static",
 		Short: "Static Http Server",
-		Long:  `Static Http Server`,
 		Run: func(cmd *cobra.Command, args []string) {
 			_, err := os.Stat(root)
 			if err != nil {

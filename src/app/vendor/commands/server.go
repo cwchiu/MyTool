@@ -6,7 +6,7 @@ import (
 )
 
 func SetupServerCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "server"}
+	rootCmd := &cobra.Command{Use: "server", Short: "服務器"}
 
 	server.SetupCharGenCommand(rootCmd)
 	server.SetupDiscardCommand(rootCmd)
