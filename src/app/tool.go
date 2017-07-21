@@ -35,6 +35,7 @@ func main() {
 	commands.SetupNetcatCommand(rootCmd)
 	commands.SetupJsCommand(rootCmd)
 	commands.SetupMp3Command(rootCmd)
+	commands.SetupWindowsCommand(rootCmd)
 
 	rootCmd.Execute()
 }
