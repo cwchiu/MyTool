@@ -7,9 +7,10 @@ import (
 	"github.com/hajimehoshi/oto"
 	"github.com/spf13/cobra"
 	"io"
-    "math/rand"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // https://github.com/hajimehoshi/go-mp3/blob/master/example/main.go
@@ -75,10 +76,16 @@ func SetupPlayCommand(rootCmd *cobra.Command) {
 
 			fmt.Printf("Music: %d\n", len(playlist))
 			c := 1
+			gen := rand.New(rand.NewSource(time.Now().Unix()))
+
 			for {
 				if len(playlist) > 1 && shuffle {
+					// fmt.Println("shuffle")
+					max_n := len(playlist)
 					for i := range playlist {
-						j := rand.Intn(i + 1)
+						j := gen.Intn(max_n)
+
+						// fmt.Printf("%d->%d, %d\n", i,j, max_n)
 						playlist[i], playlist[j] = playlist[j], playlist[i]
 					}
 				}
