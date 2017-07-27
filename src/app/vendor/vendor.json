@@ -105,6 +105,18 @@
 			"revisionTime": "2017-07-12T17:27:56Z"
 		},
 		{
+			"checksumSHA1": "njoT+7VOWz2g/DIb5QqQdtQhMPE=",
+			"path": "github.com/go-ole/go-ole",
+			"revision": "085abb85892dc1949567b726dff00fa226c60c45",
+			"revisionTime": "2017-07-12T17:44:59Z"
+		},
+		{
+			"checksumSHA1": "ZVU97szYFPntB5QbpSBfd5Bbgcc=",
+			"path": "github.com/go-ole/go-ole/oleutil",
+			"revision": "085abb85892dc1949567b726dff00fa226c60c45",
+			"revisionTime": "2017-07-12T17:44:59Z"
+		},
+		{
 			"checksumSHA1": "+uvL6lrIFyv9OZ9OxIGBYR469eU=",
 			"path": "github.com/gopherjs/gopherjs/js",
 			"revision": "2b1d432c8a82c9bff0b0baffaeb3ec6e92974112",

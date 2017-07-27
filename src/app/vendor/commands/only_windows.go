@@ -12,6 +12,7 @@ func SetupWindowsCommand(parentCmd *cobra.Command) {
 	}
 
 	windows.SetupLockCommand(rootCmd)
+	windows.SetupWord2TxtCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
