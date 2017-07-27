@@ -52,7 +52,21 @@ func SetupWord2TxtCommand(rootCmd *cobra.Command) {
 				out_fn := fn + ext
 				fmt.Println(out_fn)
 				doc := oleutil.MustCallMethod(docs, "Open", fn, nil, nil, nil).ToIDispatch()
-				oleutil.MustCallMethod(doc, "SaveAs2", out_fn, ext_code).ToIDispatch()
+                // msoEncodingUTF8 65001
+				oleutil.MustCallMethod(doc, 
+                    "SaveAs2", 
+                    out_fn /* FileName */, 
+                    ext_code /* FileFormat */, 
+                    false /* LockComments */, 
+                    "" /* Password */, 
+                    false /* AddToRecentFiles */, 
+                    "" /* WritePassword */, 
+                    true /* ReadOnlyRecommended */, 
+                    true /* EmbedTrueTypeFonts */, 
+                    true /* SaveNativePictureFormat */, 
+                    false /* SaveFormsData */, 
+                    false /* SaveAsAOCELetter */, 
+                    65001 /**/)
 			}
 		},
 	}
