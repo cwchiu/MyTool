@@ -381,6 +381,30 @@
 			"revisionTime": "2017-07-11T09:57:53Z"
 		},
 		{
+			"checksumSHA1": "zdekzNuFGSoxAZ8cURGsrhBObZs=",
+			"path": "golang.org/x/image/riff",
+			"revision": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d",
+			"revisionTime": "2017-05-14T06:33:48Z"
+		},
+		{
+			"checksumSHA1": "ebUbLKyTEaupuKj5KsceDfkn+UA=",
+			"path": "golang.org/x/image/vp8",
+			"revision": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d",
+			"revisionTime": "2017-05-14T06:33:48Z"
+		},
+		{
+			"checksumSHA1": "MF/A3WDD30iVwlktK0itZ0PTJho=",
+			"path": "golang.org/x/image/vp8l",
+			"revision": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d",
+			"revisionTime": "2017-05-14T06:33:48Z"
+		},
+		{
+			"checksumSHA1": "wwirbKM4d69iWA4s9JwpXTsda3A=",
+			"path": "golang.org/x/image/webp",
+			"revision": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d",
+			"revisionTime": "2017-05-14T06:33:48Z"
+		},
+		{
 			"checksumSHA1": "7H62S41J8xPB0TOaw5Rk1p8y84w=",
 			"path": "golang.org/x/mobile/exp/audio/al",
 			"revision": "683b305bdbdf5901d6d9b094e4948b51a37403a2",

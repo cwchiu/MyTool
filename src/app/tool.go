@@ -36,6 +36,7 @@ func main() {
 	commands.SetupJsCommand(rootCmd)
 	commands.SetupMp3Command(rootCmd)
 	commands.SetupWindowsCommand(rootCmd)
+	commands.SetupImageCommand(rootCmd)
 
 	rootCmd.Execute()
 }
