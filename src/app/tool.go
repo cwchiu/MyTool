@@ -37,6 +37,7 @@ func main() {
 	commands.SetupMp3Command(rootCmd)
 	commands.SetupWindowsCommand(rootCmd)
 	commands.SetupImageCommand(rootCmd)
+	commands.SetupImgurCommand(rootCmd)
 
 	rootCmd.Execute()
 }
