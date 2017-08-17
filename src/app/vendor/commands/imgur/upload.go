@@ -1,6 +1,7 @@
 package imgur
 
 import (
+    "commands/common"
     "fmt"
 	"github.com/spf13/cobra"
 )
@@ -11,25 +12,29 @@ func SetupUploadCommand(rootCmd *cobra.Command) {
 		Use:   "upload <filename>",
 		Short: "上傳檔案到 Imgur",
 		Run: func(cmd *cobra.Command, args []string) {
-			if len(args) < 1 {
-				panic("need an filename")
-			}
-            resp, err := UploadImgur(cid, args[0])
-            if err != nil {
-                panic(err)
+            if cid == "" {
+                panic("need -c <client-id>")
             }
             
-            if resp.Success != true {
-                panic("upload fail")
+            for _, fn := range common.GetArgsOrStdIn(args) {
+                resp, err := UploadImgur(cid, fn)
+                if err != nil {
+                    panic(err)
+                }
+                
+                if resp.Success != true {
+                    panic(fmt.Sprintf("upload fail, %s", resp.GetError()))
+                }
+                
+                fmt.Printf("Filename: %s\n", fn)
+                fmt.Printf("Image ID: %s\n", resp.Data.HashImage)
+                fmt.Printf("Delete Hash: %s\n", resp.Data.HashDelete)
+                fmt.Printf("Image Original: %s\n", resp.GetImageOriginal())
+                fmt.Printf("Image Large: %s\n", resp.GetImageLargeThumbnail())
+                fmt.Printf("Image Small: %s\n", resp.GetImageSmallThumbnail())
+                fmt.Printf("Web: %s\n", resp.GetImagePage())
+                fmt.Printf("Delete: %s\n", resp.GetImageDeletePage())
             }
-            
-            fmt.Printf("Image ID: %s\n", resp.Data.HashImage)
-            fmt.Printf("Delete Hash: %s\n", resp.Data.HashDelete)
-            fmt.Printf("Image Original: %s\n", resp.GetImageOriginal())
-            fmt.Printf("Image Large: %s\n", resp.GetImageLargeThumbnail())
-            fmt.Printf("Image Small: %s\n", resp.GetImageSmallThumbnail())
-            fmt.Printf("Web: %s\n", resp.GetImagePage())
-            fmt.Printf("Delete: %s\n", resp.GetImageDeletePage())
 		},
 	}
 
