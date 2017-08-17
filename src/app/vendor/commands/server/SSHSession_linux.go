@@ -5,7 +5,8 @@ import (
 	"github.com/gliderlabs/ssh"
 	"github.com/kr/pty"
 	"io"
-	"log"
+	"os"
+	"unsafe"
 	"os/exec"
 	"syscall"
 )
