@@ -6,7 +6,7 @@ import (
 )
 
 func SetupHashCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "hash"}
+	rootCmd := &cobra.Command{Use: "hash", Short: "雜湊計算"}
 
 	hash.SetupMd5Command(rootCmd)
 	hash.SetupSha1Command(rootCmd)

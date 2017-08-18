@@ -6,7 +6,7 @@ import (
 )
 
 func SetupNetcatCommand(parentCmd *cobra.Command) {
-	cmd := &cobra.Command{Use: "netcat"}
+	cmd := &cobra.Command{Use: "netcat", Short: "netcat"}
 
 	netcat.SetupServerCommand(cmd)
 	netcat.SetupClientCommand(cmd)

@@ -6,7 +6,7 @@ import (
 )
 
 func SetupBarCodeCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "barcode"}
+	rootCmd := &cobra.Command{Use: "barcode", Short: "條碼"}
 
 	barcode.SetupQRCommand(rootCmd)
 	// date.SetupT2SCommand(rootCmd)

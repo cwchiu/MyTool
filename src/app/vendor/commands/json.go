@@ -6,7 +6,7 @@ import (
 )
 
 func SetupJsonCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "json"}
+	rootCmd := &cobra.Command{Use: "json", Short: "json 格式化"}
 
 	json.SetupPrettyCommand(rootCmd)
 
