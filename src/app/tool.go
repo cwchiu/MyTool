@@ -38,6 +38,7 @@ func main() {
 	commands.SetupWindowsCommand(rootCmd)
 	commands.SetupImageCommand(rootCmd)
 	commands.SetupImgurCommand(rootCmd)
+	commands.SetupEpubCommand(rootCmd)
 
 	rootCmd.Execute()
 }
