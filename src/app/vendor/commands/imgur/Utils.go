@@ -12,6 +12,7 @@ import (
 )
 
 type ImgurData struct {
+    Error       interface{} `json:"error"`
 	Link        string `json:"link"`
 	ContentType string `json:"type"`
 	HashDelete  string `json:"deletehash"`
@@ -30,6 +31,20 @@ type ImgurDeleteResponse struct {
 	Status  int         `json:"status"`
 	Success bool        `json:"success"`
 	Data    interface{} `json:"data"`
+}
+
+func (self ImgurResponse) GetError() string {
+   switch self.Data.Error.(type) { 
+    default:
+        return fmt.Sprintf("Status: %d, %v", self.Status, self.Data.Error)
+    case map[string]interface{}:
+        data_error := self.Data.Error.(map[string]interface{})
+        // data_error := data["error"].(map[string]interface{})
+        
+        return fmt.Sprintf("Status: %d, (%v) %v", self.Status, data_error["code"], data_error["message"].(string))
+    case string:
+        return fmt.Sprintf("Status: %d, %s", self.Status, self.Data.Error)
+    } 
 }
 
 func (self ImgurResponse) GetImageOriginal() string {
@@ -114,12 +129,12 @@ func UploadImgur(client_id string, filename string) (*ImgurResponse, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
+    // fmt.Println(string(body))
 
 	var ret ImgurResponse
 	err2 := json.Unmarshal([]byte(body), &ret)

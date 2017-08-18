@@ -1,4 +1,4 @@
-package commands
+package pid
 
 import (
 	"fmt"
@@ -45,8 +45,8 @@ func SetupChinaPidCommand(rootCmd *cobra.Command) {
 		"140211", //山西 大同市 南郊區
 	}
 	cmd := &cobra.Command{
-		Use:   "china-pid",
-		Short: "產生符合驗證規則的身分證字號",
+		Use:   "china",
+		Short: "中國",
 		Run: func(cmd *cobra.Command, args []string) {
 			rand.Seed(time.Now().UnixNano())
 			area_code := AREA[rand.Intn(len(AREA))]
