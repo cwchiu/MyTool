@@ -1,4 +1,4 @@
-package netcat
+package mp3
 
 import (
 	"bufio"
