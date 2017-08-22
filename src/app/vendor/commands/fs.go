@@ -20,6 +20,8 @@ func SetupFsCommand(parentCmd *cobra.Command) {
 	fs.SetupTreeCommand(rootCmd)
 	fs.SetupCpCommand(rootCmd)
 	fs.SetupNlCommand(rootCmd)
+	fs.SetupDos2UnixCommand(rootCmd)
+	fs.SetupUnix2DosCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 	// rootCmd.Execute()
