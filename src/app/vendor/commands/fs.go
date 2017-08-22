@@ -23,6 +23,7 @@ func SetupFsCommand(parentCmd *cobra.Command) {
 	fs.SetupDos2UnixCommand(rootCmd)
 	fs.SetupUnix2DosCommand(rootCmd)
 	fs.SetupCutCommand(rootCmd)
+	fs.SetupGrepCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 	// rootCmd.Execute()
