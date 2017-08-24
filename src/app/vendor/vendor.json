@@ -243,6 +243,12 @@
 			"revisionTime": "2017-05-09T07:12:38Z"
 		},
 		{
+			"checksumSHA1": "WJtFHWa9TF0GnFSRJwedQ4/5fyk=",
+			"path": "github.com/ritchie46/GOPHY/img2gif",
+			"revision": "9b8a7f05cfa1becdf20363b85b2e90e207280785",
+			"revisionTime": "2017-03-15T17:31:14Z"
+		},
+		{
 			"checksumSHA1": "xPOk5wH3FboZmPZVjuGU/ylBYjU=",
 			"path": "github.com/robertkrimen/otto",
 			"revision": "49fee9c1c0db1c366003ede4cc665f9924a97521",
