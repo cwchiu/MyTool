@@ -14,7 +14,6 @@ func SetupHashCommand(parentCmd *cobra.Command) {
 	hash.SetupSha384Command(rootCmd)
 	hash.SetupSha512Command(rootCmd)
 	hash.SetupCrc32Command(rootCmd)
-	hash.SetupCertCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }

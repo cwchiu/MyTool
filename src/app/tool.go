@@ -16,7 +16,7 @@ func main() {
 	rootCmd := &cobra.Command{Use: "tool", Long: `我的個人常用工具
 Site: https://chuiwenchiu.wordpress.com
 Github: https://github.com/cwchiu/MyTool
-    `}}}
+    `}
 	rootCmd.AddCommand(&cobra.Command{Use: "version", Short: "版本資訊", Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Version: 0.0.1")
 	}})
