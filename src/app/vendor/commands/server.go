@@ -17,6 +17,7 @@ func SetupServerCommand(parentCmd *cobra.Command) {
 	server.SetupStaticCommand(rootCmd)
 	server.SetupFtpCommand(rootCmd)
 	server.SetupSSHCommand(rootCmd)
+	server.SetupTcpPortForwardCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
