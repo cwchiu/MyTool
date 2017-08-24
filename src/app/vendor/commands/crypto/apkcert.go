@@ -4,7 +4,7 @@ import (
 	"archive/zip"
 	"crypto/sha1"
 	"encoding/base64"
-    "fmt"
+	"fmt"
 	"github.com/spf13/cobra"
 	"io"
 	"log"
@@ -99,10 +99,10 @@ func GenerateApkSignFile(apk_file, dic string) (err error) {
 	cf_file.Write([]byte(cf_header))
 	io.Copy(cf_file, mm_file)
 	mm_file.Close()
-    
-    fmt.Println("Export:")
-    fmt.Println(manifest_mf)
-    fmt.Println(cert_sf)
+
+	fmt.Println("Export:")
+	fmt.Println(manifest_mf)
+	fmt.Println(cert_sf)
 	return
 }
 
@@ -112,10 +112,10 @@ func SetupApkCertCommand(rootCmd *cobra.Command) {
 		Use:   "gen-apk-cert <apk>",
 		Short: "取得apk的證書",
 		Run: func(cmd *cobra.Command, args []string) {
-            if len(args) != 1 {
-                panic("required <apk>")
-            }
-            apk_fn := args[0]
+			if len(args) != 1 {
+				panic("required <apk>")
+			}
+			apk_fn := args[0]
 			err := GenerateApkSignFile(apk_fn, output_dir)
 			if err != nil {
 				panic(err)
