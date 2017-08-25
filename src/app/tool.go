@@ -42,6 +42,7 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupImgurCommand(rootCmd)
 	commands.SetupEpubCommand(rootCmd)
 	commands.SetupCryptoCommand(rootCmd)
+	commands.SetupSSHCommand(rootCmd)
 
 	rootCmd.Execute()
 }

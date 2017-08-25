@@ -171,6 +171,12 @@
 			"revisionTime": "2016-10-27T03:53:36Z"
 		},
 		{
+			"checksumSHA1": "nvGuYn0dr8PhD6jFH9N/VGJQ2gg=",
+			"path": "github.com/kr/fs",
+			"revision": "2788f0dbd16903de03cb8186e5c7d97b69ad387b",
+			"revisionTime": "2013-11-06T22:25:44Z"
+		},
+		{
 			"checksumSHA1": "8jdAN2n9kJasxFmikoyDZAbv8ig=",
 			"path": "github.com/kr/pty",
 			"revision": "2c10821df3c3cf905230d078702dfbe9404c9b23",
@@ -235,6 +241,12 @@
 			"path": "github.com/pkg/errors",
 			"revision": "c605e284fe17294bda444b34710735b29d1a9d90",
 			"revisionTime": "2017-05-05T04:36:39Z"
+		},
+		{
+			"checksumSHA1": "RpXTNTOwn8ssv4c6MphkKJXuJ6k=",
+			"path": "github.com/pkg/sftp",
+			"revision": "98203f5a8333288eb3163b7c667d4260fe1333e9",
+			"revisionTime": "2017-08-23T21:46:20Z"
 		},
 		{
 			"checksumSHA1": "7Z/c2EP7sQ5vaN9q0cerXTwx9Bw=",
@@ -393,6 +405,12 @@
 			"revisionTime": "2017-07-11T09:57:53Z"
 		},
 		{
+			"checksumSHA1": "nqWNlnMmVpt628zzvyo6Yv2CX5Q=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "eb71ad9bd329b5ac0fd0148dd99bd62e8be8e035",
+			"revisionTime": "2017-08-07T10:11:13Z"
+		},
+		{
 			"checksumSHA1": "zdekzNuFGSoxAZ8cURGsrhBObZs=",
 			"path": "golang.org/x/image/riff",
 			"revision": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d",
@@ -451,6 +469,12 @@
 			"path": "golang.org/x/sys/unix",
 			"revision": "abf9c25f54453410d0c6668e519582a9e1115027",
 			"revisionTime": "2017-07-10T15:57:01Z"
+		},
+		{
+			"checksumSHA1": "gVfCD++7aVcdKF2spv6XkEM/wYw=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "07c182904dbd53199946ba614a412c61d3c548f5",
+			"revisionTime": "2017-08-16T12:26:40Z"
 		},
 		{
 			"checksumSHA1": "Mr4ur60bgQJnQFfJY0dGtwWwMPE=",
