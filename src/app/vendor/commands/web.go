@@ -30,6 +30,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupSMSCommand(rootCmd)
 	web.SetupMoreHandlinoCommand(rootCmd)
 	web.SetupBabelGenCommand(rootCmd)
+	web.SetupWhosCallCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
