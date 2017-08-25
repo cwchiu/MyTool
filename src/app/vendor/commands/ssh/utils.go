@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
+	"gopkg.in/cheggaaa/pb.v1"
+	"io"
 	"net"
 	"os"
 	"path"
 	"time"
 )
-
 
 func connect(user, password, host string, port int) (*ssh.Client, error) {
 	var (
@@ -39,18 +40,17 @@ func connect(user, password, host string, port int) (*ssh.Client, error) {
 		return nil, err
 	}
 
-
-    return sshClient, nil
+	return sshClient, nil
 }
 
 func newftpclient(user, password, host string, port int) (*sftp.Client, error) {
-    sshClient, err := connect(user, password, host, port)
-	if  err != nil {
+	sshClient, err := connect(user, password, host, port)
+	if err != nil {
 		return nil, err
 	}
 	// create sftp client
-    sftpClient, err := sftp.NewClient(sshClient);
-	if  err != nil {
+	sftpClient, err := sftp.NewClient(sshClient)
+	if err != nil {
 		return nil, err
 	}
 
@@ -70,14 +70,22 @@ func upload(sftpClient *sftp.Client, local_fn string, remote_dir string) error {
 		return err
 	}
 	defer dstFile.Close()
-
-	buf := make([]byte, 1024)
+	finfo, err := srcFile.Stat()
+	if err != nil {
+		return err
+	}
+	bar := pb.New64(finfo.Size()).SetUnits(pb.U_BYTES)
+	bar.Start()
+	buf_size := 1024
+	buf := make([]byte, buf_size)
 	for {
 		n, _ := srcFile.Read(buf)
 		if n == 0 {
 			break
 		}
 		dstFile.Write(buf)
+		bar.Add(buf_size)
+		// bar.Increment()
 	}
 
 	return nil
@@ -90,6 +98,11 @@ func download(sftpClient *sftp.Client, remote_fn string, local_dir string) error
 	}
 	defer srcFile.Close()
 
+	finfo, err := srcFile.Stat()
+	if err != nil {
+		return err
+	}
+
 	localFileName := path.Base(remote_fn)
 	dstFile, err := os.Create(path.Join(local_dir, localFileName))
 	if err != nil {
@@ -97,10 +110,18 @@ func download(sftpClient *sftp.Client, remote_fn string, local_dir string) error
 	}
 	defer dstFile.Close()
 
-	if _, err = srcFile.WriteTo(dstFile); err != nil {
+	bar := pb.New64(finfo.Size()).SetUnits(pb.U_BYTES)
+	bar.Start()
+	// writer := bar.NewProxyWriter(dstFile)
+	reader := bar.NewProxyReader(srcFile)
+	_, err = io.Copy(dstFile, reader)
+	if err != nil {
 		return err
 	}
+	// if _, err = srcFile.WriteTo(writer); err != nil {
+	// if _, err = srcFile.WriteTo(dstFile); err != nil {
+	// return err
+	// }
 
 	return nil
 }
-
