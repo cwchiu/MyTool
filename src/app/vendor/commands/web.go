@@ -28,6 +28,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupYoudaoTranslateCommand(rootCmd)
 	web.SetupGistCommand(rootCmd)
 	web.SetupSMSCommand(rootCmd)
+	web.SetupMoreHandlinoCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
