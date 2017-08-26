@@ -43,6 +43,7 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupEpubCommand(rootCmd)
 	commands.SetupCryptoCommand(rootCmd)
 	commands.SetupSSHCommand(rootCmd)
+	commands.SetupClipCommand(rootCmd)
 
 	rootCmd.Execute()
 }

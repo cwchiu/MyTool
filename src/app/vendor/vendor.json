@@ -21,6 +21,12 @@
 			"revisionTime": "2016-10-02T11:37:05Z"
 		},
 		{
+			"checksumSHA1": "zrngcNMMgLAjeihEvX/Gy1PRuTo=",
+			"path": "github.com/atotto/clipboard",
+			"revision": "bb272b845f1112e10117e3e45ce39f690c0001ad",
+			"revisionTime": "2016-02-19T03:44:21Z"
+		},
+		{
 			"checksumSHA1": "llMpwFghZedVGprTsDSW2JelUIE=",
 			"path": "github.com/bogem/id3v2",
 			"revision": "8af846f8a877b9712b60933cd7222b4c8b3d3653",
