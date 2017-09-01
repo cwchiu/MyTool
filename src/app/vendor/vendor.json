@@ -105,6 +105,12 @@
 			"revisionTime": "2017-04-09T01:10:42Z"
 		},
 		{
+			"checksumSHA1": "lta661uNULoPJERUJnXvA47dRx0=",
+			"path": "github.com/geckoboard/cli-table",
+			"revision": "ba78d7928542412052e800bbe238b66085289778",
+			"revisionTime": "2016-11-24T11:19:21Z"
+		},
+		{
 			"checksumSHA1": "iEDyiLnVC0jeXI2DUIPhP4f+Oww=",
 			"path": "github.com/gliderlabs/ssh",
 			"revision": "33ad2fe3182e798daa7d8da300f67857474cea31",

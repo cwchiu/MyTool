@@ -31,6 +31,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupMoreHandlinoCommand(rootCmd)
 	web.SetupBabelGenCommand(rootCmd)
 	web.SetupWhosCallCommand(rootCmd)
+	web.SetupProxyCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
