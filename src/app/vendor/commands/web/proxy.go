@@ -43,6 +43,24 @@ func (s BySpeed) Less(i, j int) bool {
 	return a > b
 }
 
+type TypeDatas []string
+
+func (s TypeDatas) Conv(v string) string {
+	if v == "HTTP" {
+		return "no"
+	}
+
+	if v == "HTTPS" {
+		return "yes"
+	}
+
+	return "any"
+}
+
+var VALID_TYPE = TypeDatas{
+	"HTTP", "HTTPS",
+}
+
 type CountryDatas map[string]string
 
 func (s CountryDatas) IsValid(v string) bool {
@@ -187,6 +205,7 @@ var VALID_COUNTRY = CountryDatas{
 
 func SetupProxyCommand(rootCmd *cobra.Command) {
 	var filter_country string
+	var filter_ssl string
 	var list bool
 
 	cmd := &cobra.Command{
@@ -200,6 +219,8 @@ func SetupProxyCommand(rootCmd *cobra.Command) {
 			request := gorequest.New()
 			is_valid := VALID_COUNTRY.IsValid(filter_country)
 
+			ssl := VALID_TYPE.Conv(filter_ssl)
+
 			search := ""
 			country := "any"
 			if is_valid {
@@ -207,7 +228,7 @@ func SetupProxyCommand(rootCmd *cobra.Command) {
 				country = filter_country
 			}
 
-			url := fmt.Sprintf("http://proxy-list.org/english/search.php?search=%s&country=%s&type=any&port=any&ssl=any&p=1", search, country)
+			url := fmt.Sprintf("http://proxy-list.org/english/search.php?search=%s&country=%s&type=any&port=any&ssl=%s&p=1", search, country, ssl)
 			resp, _, err := request.Get(fmt.Sprintf(url)).Set("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)").SetDebug(false).End()
 			if err != nil {
 				panic(err)
@@ -238,10 +259,10 @@ func SetupProxyCommand(rootCmd *cobra.Command) {
 					return
 				}
 
-				fmt.Println(s.Find("li.proxy").Text())
-				fmt.Println(s.Find("li.https").Text())
-				fmt.Println(speed)
-				fmt.Println(s.Find("li.type").Text())
+				// fmt.Println(s.Find("li.proxy").Text())
+				// fmt.Println(s.Find("li.https").Text())
+				// fmt.Println(speed)
+				// fmt.Println(s.Find("li.type").Text())
 
 				speed_data := re_speed.FindStringSubmatch(speed)
 				fmt.Println(speed_data)
@@ -274,6 +295,7 @@ func SetupProxyCommand(rootCmd *cobra.Command) {
 		},
 	}
 	cmd.Flags().StringVarP(&filter_country, "country", "c", "", "過濾指定國家")
+	cmd.Flags().StringVarP(&filter_ssl, "ssl", "s", "", "ANY, HTTP or HTTPS")
 	cmd.Flags().BoolVarP(&list, "list", "l", false, "列出過濾國家")
 	rootCmd.AddCommand(cmd)
 
