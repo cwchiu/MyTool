@@ -249,6 +249,12 @@
 			"revisionTime": "2017-04-28T05:41:52Z"
 		},
 		{
+			"checksumSHA1": "uY0cjuu0uqjTiNfbu+ZEqj6FI8c=",
+			"path": "github.com/nfnt/resize",
+			"revision": "891127d8d1b52734debe1b3c3d7e747502b6c366",
+			"revisionTime": "2016-07-24T20:39:20Z"
+		},
+		{
 			"checksumSHA1": "sYl8BgUgUE1qv4/DVLu7VT/kuqA=",
 			"path": "github.com/parnurzeal/gorequest",
 			"revision": "a578a48e8d6ca8b01a3b18314c43c6716bb5f5a3",

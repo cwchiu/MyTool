@@ -11,6 +11,7 @@ func SetupImageCommand(parentCmd *cobra.Command) {
 	image.SetupToPngCommand(cmd)
 	image.SetupToGifCommand(cmd)
 	image.SetupToJpegCommand(cmd)
+	image.SetupToAsciiCommand(cmd)
 
 	parentCmd.AddCommand(cmd)
 }
