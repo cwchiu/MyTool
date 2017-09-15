@@ -9,6 +9,12 @@
 			"revisionTime": "2017-06-23T16:21:02Z"
 		},
 		{
+			"checksumSHA1": "fmCeRTAncM8trm2iKYozOXtTgyY=",
+			"path": "github.com/abbot/go-http-auth",
+			"revision": "0ddd408d5d60ea76e320503cc7dd091992dee608",
+			"revisionTime": "2017-06-29T22:53:41Z"
+		},
+		{
 			"checksumSHA1": "Bgs5fKx4V8jxL/m/krOLmhS4az4=",
 			"path": "github.com/andybalholm/cascadia",
 			"revision": "349dd0209470eabd9514242c688c403c0926d266",
@@ -405,6 +411,18 @@
 			"revisionTime": "2017-05-08T18:43:26Z"
 		},
 		{
+			"checksumSHA1": "UWjVYmoHlIfHzVIskELHiJQtMOI=",
+			"path": "golang.org/x/crypto/bcrypt",
+			"revision": "faadfbdc035307d901e69eea569f5dda451a3ee3",
+			"revisionTime": "2017-09-12T19:17:24Z"
+		},
+		{
+			"checksumSHA1": "oVPHWesOmZ02vLq2fglGvf+AMgk=",
+			"path": "golang.org/x/crypto/blowfish",
+			"revision": "faadfbdc035307d901e69eea569f5dda451a3ee3",
+			"revisionTime": "2017-09-12T19:17:24Z"
+		},
+		{
 			"checksumSHA1": "MlEHIE/60sB86Lmf0MPTIXHzKzE=",
 			"path": "golang.org/x/crypto/curve25519",
 			"revision": "dd85ac7e6a88fc6ca420478e934de5f1a42dd3c6",
@@ -469,6 +487,12 @@
 			"path": "golang.org/x/mobile/internal/mobileinit",
 			"revision": "683b305bdbdf5901d6d9b094e4948b51a37403a2",
 			"revisionTime": "2017-07-17T16:15:53Z"
+		},
+		{
+			"checksumSHA1": "dr5+PfIRzXeN+l1VG+s0lea9qz8=",
+			"path": "golang.org/x/net/context",
+			"revision": "859d1a86bb617c0c20d154590c3c5d3fcb670b07",
+			"revisionTime": "2017-09-06T10:30:54Z"
 		},
 		{
 			"checksumSHA1": "vqc3a+oTUGX8PmD0TS+qQ7gmN8I=",
