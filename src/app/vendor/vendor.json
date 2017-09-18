@@ -87,6 +87,12 @@
 			"revisionTime": "2017-06-18T05:38:12Z"
 		},
 		{
+			"checksumSHA1": "IkAYIhxmvTQKEJvclIZJoVh9ats=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "a539ee1a749a2b895533f979515ac7e6e0f5b650",
+			"revisionTime": "2017-06-08T00:51:49Z"
+		},
+		{
 			"checksumSHA1": "kdrh+N+tJm4iK3O8i/nZZKjk3mk=",
 			"path": "github.com/elazarl/goproxy",
 			"revision": "aacba83f36a55ac31cbb71c06547a328c0cd1604",
