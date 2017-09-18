@@ -2,9 +2,11 @@ package server
 
 import (
 	// "encoding/base64"
-	"bytes"
+	// "bytes"
+	"encoding/json"
 	"fmt"
 	"github.com/abbot/go-http-auth"
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/spf13/cobra"
 	"io"
 	"io/ioutil"
@@ -12,6 +14,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"time"
 	// "strings"
 )
 
@@ -101,6 +104,120 @@ func pass(w http.ResponseWriter, r *auth.AuthenticatedRequest) {
 	fmt.Fprintf(w, "<html><body><h1>Hello, %s!</h1></body></html>", r.Username)
 }
 
+// https://gist.github.com/thealexcons/4ecc09d50e6b9b3ff4e2408e910beb22
+type userCredentials struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type jwtClaims struct {
+	Username string `json:"username"`
+	// recommended having
+	jwt.StandardClaims
+}
+
+type tokenData struct {
+	Token string `json:"token"`
+}
+
+const JWT_SECRET string = "!@#$%^&"
+
+func jsonResponse(response interface{}, w http.ResponseWriter) {
+
+	json, err := json.Marshal(response)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(json)
+}
+
+// curl -k -H "Content-Type: application/json" -X POST -d '{"username":"guest","password":"1234"}' https://127.0.0.1:28080/auth/jwt/login
+// curl -k -H "Content-Type: application/json" -X POST -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imd1ZXN0IiwiZXhwIjoxNTA1NzEwNDUxLCJpc3MiOiJsb2NhbGhvc3Q6OTAwMCJ9.Pgaz0u3XkDlSqfsAJeCzRVJqsfmYS89wIeUIKmebyNY"}' https://127.0.0.1:28080/auth/jwt/test
+func jwtLogin(w http.ResponseWriter, r *http.Request) {
+
+	var user userCredentials
+
+	//decode request into UserCredentials struct
+	err := json.NewDecoder(r.Body).Decode(&user)
+	if err != nil {
+		w.WriteHeader(http.StatusForbidden)
+		fmt.Fprintf(w, "Error in request")
+		return
+	}
+
+	log.Println(user.Username, user.Password)
+
+	//validate user credentials
+	if user.Username != "guest" || user.Password != "1234" {
+		w.WriteHeader(http.StatusForbidden)
+		log.Println("Error logging in")
+		fmt.Fprint(w, "Invalid credentials")
+		return
+	}
+
+	// Expires the token and cookie in 1 hour
+	expireToken := time.Now().Add(time.Hour * 1).Unix()
+	// expireCookie := time.Now().Add(time.Hour * 1)
+
+	// We'll manually assign the claims but in production you'd insert values from a database
+	claims := jwtClaims{
+		user.Username,
+		jwt.StandardClaims{
+			ExpiresAt: expireToken,
+			Issuer:    "localhost:9000",
+		},
+	}
+
+	// Create the token using your claims
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	// Signs the token with a secret.
+	signedToken, _ := token.SignedString([]byte(JWT_SECRET))
+	// cookie := http.Cookie{Name: "Auth", Value: signedToken, Expires: expireCookie, HttpOnly: true}
+	// http.SetCookie(w, &cookie)
+
+	//create a token instance using the token string
+	response := tokenData{signedToken}
+	jsonResponse(response, w)
+}
+
+func jwtTest(w http.ResponseWriter, r *http.Request) {
+	var data tokenData
+	err := json.NewDecoder(r.Body).Decode(&data)
+	if err != nil {
+		w.WriteHeader(http.StatusForbidden)
+		fmt.Fprintf(w, "Error in request")
+		return
+	}
+
+	// Return a Token using the cookie
+	token, err := jwt.ParseWithClaims(data.Token, &jwtClaims{}, func(token *jwt.Token) (interface{}, error) {
+		// Make sure token's signature wasn't changed
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, fmt.Errorf("Unexpected siging method")
+		}
+		return []byte(JWT_SECRET), nil
+	})
+	if err != nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	// Grab the tokens claims and pass it into the original request
+	if claims, ok := token.Claims.(*jwtClaims); ok && token.Valid {
+		fmt.Println(claims)
+		fmt.Fprintf(w, "<html><body><h1>Hello, %s!</h1></body></html>", claims.Username)
+
+	} else {
+		http.NotFound(w, r)
+		return
+	}
+}
+
 // openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
 func SetupStaticCommand(rootCmd *cobra.Command) {
 	var port int32
@@ -124,6 +241,8 @@ func SetupStaticCommand(rootCmd *cobra.Command) {
 
 			http.HandleFunc("/api", apiHandler)
 			http.HandleFunc("/upload", createUploadHandler(root))
+			http.HandleFunc("/auth/jwt/login", jwtLogin)
+			http.HandleFunc("/auth/jwt/test", jwtTest)
 
 			basic_auth := auth.NewBasicAuthenticator("chuiwenchiu.wordpress.com", func(user, realm string) string {
 				log.Printf("%v", realm)
@@ -167,6 +286,8 @@ func SetupStaticCommand(rootCmd *cobra.Command) {
 			log.Printf("Upload: %s://127.0.0.1:%d/upload", protocol, port)
 			log.Printf("Basic Auth(guest/1234): %s://127.0.0.1:%d/auth/basic", protocol, port)
 			log.Printf("Digest Auth(guest/1234): %s://127.0.0.1:%d/auth/digest", protocol, port)
+			log.Printf("JWT Auth(guest/1234): %s://127.0.0.1:%d/auth/jwt/login", protocol, port)
+			log.Printf("JWT Test: %s://127.0.0.1:%d/auth/jwt/test", protocol, port)
 			log.Printf("API: %s://127.0.0.1:%d/api", protocol, port)
 
 			if protocol == "https" {
