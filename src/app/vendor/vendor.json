@@ -267,6 +267,12 @@
 			"revisionTime": "2016-07-24T20:39:20Z"
 		},
 		{
+			"checksumSHA1": "F+AekC/3L1GpQ6knbXtU39zuoyo=",
+			"path": "github.com/nosixtools/solarlunar",
+			"revision": "832f6f39411cc868cedcc71640bce2d960379c90",
+			"revisionTime": "2017-08-21T08:39:46Z"
+		},
+		{
 			"checksumSHA1": "sYl8BgUgUE1qv4/DVLu7VT/kuqA=",
 			"path": "github.com/parnurzeal/gorequest",
 			"revision": "a578a48e8d6ca8b01a3b18314c43c6716bb5f5a3",

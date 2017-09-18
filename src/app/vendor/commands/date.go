@@ -11,6 +11,8 @@ func SetupDateCommand(parentCmd *cobra.Command) {
 	date.SetupNowCommand(rootCmd)
 	date.SetupT2SCommand(rootCmd)
 	date.SetupS2TCommand(rootCmd)
+	date.SetupS2LCommand(rootCmd)
+	date.SetupL2SCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
