@@ -18,8 +18,6 @@ import (
 	// "strings"
 )
 
-type httpHandler func(w http.ResponseWriter, r *http.Request)
-
 func exists(fn string) bool {
 	if _, err := os.Stat(fn); err == nil {
 		return true
@@ -50,7 +48,7 @@ func apiHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func createUploadHandler(root string) httpHandler {
+func createUploadHandler(root string) http.HandlerFunc {
 	upload_folder := filepath.Join(root, "upload")
 	os.Mkdir(upload_folder, 0777)
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -102,6 +100,43 @@ func createUploadHandler(root string) httpHandler {
 
 func pass(w http.ResponseWriter, r *auth.AuthenticatedRequest) {
 	fmt.Fprintf(w, "<html><body><h1>Hello, %s!</h1></body></html>", r.Username)
+}
+
+func createDigestAuthHandler() http.HandlerFunc {
+	digest_auth := auth.NewDigestAuthenticator("chuiwenchiu.wordpress.com", func(user, realm string) string {
+		if user == "guest" {
+			return "1234"
+		}
+		return ""
+	})
+	digest_auth.PlainTextSecrets = true
+	return digest_auth.Wrap(pass)
+}
+
+func createBasicAuthHandler() http.HandlerFunc {
+	basic_auth := auth.NewBasicAuthenticator("chuiwenchiu.wordpress.com", func(user, realm string) string {
+		log.Printf("%v", realm)
+		if user == "guest" {
+			// hello
+			password := "1234"
+			magic := "$1$" // 前後一定要有 $
+			salt := "dlPL2MqE"
+
+			// hashedPassword := []byte("$1$dlPL2MqE$oQmn16q49SqdmhenQuNgs1")
+			// parts := bytes.SplitN(hashedPassword, []byte("$"), 4)
+			// magic2 := []byte("$" + string(parts[1]) + "$")
+			// salt2 := parts[2]
+			// fmt.Printf("%v = %v\n", string(magic2), string(magic))
+			// fmt.Printf("%v = %v\n", string(salt2), string(salt))
+			// return "$1$dlPL2MqE$oQmn16q49SqdmhenQuNgs1"
+			// v := magic + salt  + "$" + string(auth.MD5Crypt([]byte(password), []byte(salt), []byte(magic)))
+			// fmt.Printf(v)
+			return string(auth.MD5Crypt([]byte(password), []byte(salt), []byte(magic)))
+		}
+		return ""
+	})
+
+	return basic_auth.Wrap(pass)
 }
 
 // https://gist.github.com/thealexcons/4ecc09d50e6b9b3ff4e2408e910beb22
@@ -243,38 +278,8 @@ func SetupWebCommand(rootCmd *cobra.Command) {
 			http.HandleFunc("/upload", createUploadHandler(root))
 			http.HandleFunc("/auth/jwt/login", jwtLogin)
 			http.HandleFunc("/auth/jwt/test", jwtTest)
-
-			basic_auth := auth.NewBasicAuthenticator("chuiwenchiu.wordpress.com", func(user, realm string) string {
-				log.Printf("%v", realm)
-				if user == "guest" {
-					// hello
-					password := "1234"
-					magic := "$1$" // 前後一定要有 $
-					salt := "dlPL2MqE"
-
-					// hashedPassword := []byte("$1$dlPL2MqE$oQmn16q49SqdmhenQuNgs1")
-					// parts := bytes.SplitN(hashedPassword, []byte("$"), 4)
-					// magic2 := []byte("$" + string(parts[1]) + "$")
-					// salt2 := parts[2]
-					// fmt.Printf("%v = %v\n", string(magic2), string(magic))
-					// fmt.Printf("%v = %v\n", string(salt2), string(salt))
-					// return "$1$dlPL2MqE$oQmn16q49SqdmhenQuNgs1"
-					// v := magic + salt  + "$" + string(auth.MD5Crypt([]byte(password), []byte(salt), []byte(magic)))
-					// fmt.Printf(v)
-					return string(auth.MD5Crypt([]byte(password), []byte(salt), []byte(magic)))
-				}
-				return ""
-			})
-			http.HandleFunc("/auth/basic", basic_auth.Wrap(pass))
-
-			digest_auth := auth.NewDigestAuthenticator("chuiwenchiu.wordpress.com", func(user, realm string) string {
-				if user == "guest" {
-					return "1234"
-				}
-				return ""
-			})
-			digest_auth.PlainTextSecrets = true
-			http.HandleFunc("/auth/digest", digest_auth.Wrap(pass))
+			http.HandleFunc("/auth/basic", createBasicAuthHandler())
+			http.HandleFunc("/auth/digest", createDigestAuthHandler())
 
 			http.Handle("/s/", http.StripPrefix("/s/", http.FileServer(http.Dir(root))))
 			if exists(filename_cert) && exists(filename_key) {
