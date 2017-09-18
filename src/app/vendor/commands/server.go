@@ -14,7 +14,7 @@ func SetupServerCommand(parentCmd *cobra.Command) {
 	server.SetupQuoteCommand(rootCmd)
 	server.SetupDaytimeCommand(rootCmd)
 	server.SetupProxyCommand(rootCmd)
-	server.SetupStaticCommand(rootCmd)
+	server.SetupWebCommand(rootCmd)
 	server.SetupFtpCommand(rootCmd)
 	server.SetupSSHCommand(rootCmd)
 	server.SetupTcpPortForwardCommand(rootCmd)

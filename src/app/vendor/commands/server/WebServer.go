@@ -219,7 +219,7 @@ func jwtTest(w http.ResponseWriter, r *http.Request) {
 }
 
 // openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
-func SetupStaticCommand(rootCmd *cobra.Command) {
+func SetupWebCommand(rootCmd *cobra.Command) {
 	var port int32
 	var root string
 	var filename_cert string
