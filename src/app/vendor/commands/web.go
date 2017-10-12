@@ -32,6 +32,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupBabelGenCommand(rootCmd)
 	web.SetupWhosCallCommand(rootCmd)
 	web.SetupProxyCommand(rootCmd)
+	web.SetupTinyCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
