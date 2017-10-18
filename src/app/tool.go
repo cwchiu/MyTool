@@ -44,6 +44,7 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupCryptoCommand(rootCmd)
 	commands.SetupSSHCommand(rootCmd)
 	commands.SetupClipCommand(rootCmd)
+	commands.SetupFtpCommand(rootCmd)
 
 	rootCmd.Execute()
 }
