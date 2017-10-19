@@ -22,7 +22,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupUrlEncodeCommand(rootCmd)
 	web.SetupUrlDecodeCommand(rootCmd)
 	web.SetupExchangeRateCommand(rootCmd)
-	web.SetupYoudaoDictCommand(rootCmd)
+	// web.SetupYoudaoDictCommand(rootCmd)
 	web.SetupGoogleDnsResolveCommand(rootCmd)
 	web.SetupGenChineseNameCommand(rootCmd)
 	web.SetupYoudaoTranslateCommand(rootCmd)
