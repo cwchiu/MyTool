@@ -265,8 +265,8 @@ func SetupProxyCommand(rootCmd *cobra.Command) {
 				// fmt.Println(s.Find("li.type").Text())
 
 				speed_data := re_speed.FindStringSubmatch(speed)
-				fmt.Println(speed_data)
-				fmt.Println(len(speed_data))
+				// fmt.Println(speed_data)
+				// fmt.Println(len(speed_data))
 				if len(speed_data) < 2 {
 					return
 				}
