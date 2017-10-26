@@ -45,6 +45,7 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupSSHCommand(rootCmd)
 	commands.SetupClipCommand(rootCmd)
 	commands.SetupFtpCommand(rootCmd)
+	commands.SetupSubtitleCommand(rootCmd)
 
 	rootCmd.Execute()
 }
