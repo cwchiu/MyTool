@@ -117,6 +117,12 @@
 			"revisionTime": "2017-07-02T15:34:43Z"
 		},
 		{
+			"checksumSHA1": "rNGJereenlgchMueLU9iBCyQDo8=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "71fa72d4842364bc5f74185f4161e0099ea3624a",
+			"revisionTime": "2017-10-11T16:07:11Z"
+		},
+		{
 			"checksumSHA1": "rxb3ZEpHszEa/NbgwnPGWVdvGYU=",
 			"path": "github.com/hajimehoshi/go-mp3",
 			"revision": "38fd3fbee64d4cf50b38449550183de5bd3c1bb2",
