@@ -35,6 +35,7 @@ func SetupWebCommand(parentCmd *cobra.Command) {
 	web.SetupTinyCommand(rootCmd)
 	web.SetupYandexTranslateCommand(rootCmd)
 	web.SetupEtherCommand(rootCmd)
+	web.SetupZipCodeCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
