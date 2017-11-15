@@ -14,6 +14,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+    "regexp"
 	"time"
 	// "strings"
 )
@@ -253,6 +254,7 @@ func jwtTest(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
 // openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
 func SetupWebCommand(rootCmd *cobra.Command) {
 	var port int32
@@ -281,7 +283,16 @@ func SetupWebCommand(rootCmd *cobra.Command) {
 			http.HandleFunc("/auth/basic", createBasicAuthHandler())
 			http.HandleFunc("/auth/digest", createDigestAuthHandler())
 
-			http.Handle("/s/", http.StripPrefix("/s/", http.FileServer(http.Dir(root))))
+            fileserver := http.StripPrefix("/s/", http.FileServer(http.Dir(root)))
+            
+            wasm := regexp.MustCompile("\\.wasm$")
+			http.HandleFunc("/s/", func (w http.ResponseWriter, r *http.Request) {
+                ruri := r.RequestURI
+                if wasm.MatchString(ruri) {
+                    w.Header().Set("Content-Type", "application/wasm")
+                }
+                fileserver.ServeHTTP(w, r)
+            })
 			if exists(filename_cert) && exists(filename_key) {
 				protocol = "https"
 			}
