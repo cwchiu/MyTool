@@ -4,6 +4,7 @@ import (
 	commands "commands"
 	"fmt"
 	"github.com/spf13/cobra"
+    _ "statik" 
 )
 
 // go build -o tool.exe
@@ -46,6 +47,7 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupClipCommand(rootCmd)
 	commands.SetupFtpCommand(rootCmd)
 	commands.SetupSubtitleCommand(rootCmd)
+	commands.SetupProxyPoolCommand(rootCmd)
 
 	rootCmd.Execute()
 }

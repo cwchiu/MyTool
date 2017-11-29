@@ -3,10 +3,10 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "uKoapiicR88rwOpNQLmB4LjVFns=",
+			"checksumSHA1": "dfpZ4f/56fFX3SR6qlgqwd/VoPY=",
 			"path": "github.com/PuerkitoBio/goquery",
-			"revision": "8806ada2a4ab225c06e9106f9631be80932db7ce",
-			"revisionTime": "2017-06-23T16:21:02Z"
+			"revision": "1a71cc719d0d5b9e4f14ae072bef08b576b0bab5",
+			"revisionTime": "2017-10-07T14:12:28Z"
 		},
 		{
 			"checksumSHA1": "fmCeRTAncM8trm2iKYozOXtTgyY=",
@@ -153,6 +153,42 @@
 			"revisionTime": "2017-07-17T06:39:11Z"
 		},
 		{
+			"checksumSHA1": "TSZCLABfJJCZH7Q+6P9h7CMhrN0=",
+			"path": "github.com/henson/ProxyPool",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
+			"checksumSHA1": "xomcR6RRTD9ouGhuiCAgNq+YrWs=",
+			"path": "github.com/henson/ProxyPool/api",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
+			"checksumSHA1": "JV67+jkslN31VBUiliHkk/GR9ss=",
+			"path": "github.com/henson/ProxyPool/getter",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
+			"checksumSHA1": "fwu1QI6WbJIp4/lO1pxgcu4Q7UU=",
+			"path": "github.com/henson/ProxyPool/models",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
+			"checksumSHA1": "r0i1UiMwtPB1xF6VKnIo0uQAZhI=",
+			"path": "github.com/henson/ProxyPool/storage",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
+			"checksumSHA1": "MMB80lkruaEWG9YoCd5nLPCeQ0c=",
+			"path": "github.com/henson/ProxyPool/util",
+			"revision": "0dd30fdca712b0889ec389813d896a4287e7a0f5",
+			"revisionTime": "2017-07-12T03:43:29Z"
+		},
+		{
 			"checksumSHA1": "UYDU8nJJ/RXSTrR+dgQodj78uQI=",
 			"path": "github.com/inconshreveable/mousetrap",
 			"revision": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75",
@@ -249,13 +285,19 @@
 			"revisionTime": "2016-07-24T20:39:20Z"
 		},
 		{
+			"checksumSHA1": "/XFTeQHqRs9Fw29A0PPK1yJHrG4=",
+			"path": "github.com/nladuo/go-phantomjs-fetcher",
+			"revision": "972567ff937fb9b9209bf5b20a58b4bb7d6661b3",
+			"revisionTime": "2016-10-27T06:20:30Z"
+		},
+		{
 			"checksumSHA1": "F+AekC/3L1GpQ6knbXtU39zuoyo=",
 			"path": "github.com/nosixtools/solarlunar",
 			"revision": "832f6f39411cc868cedcc71640bce2d960379c90",
 			"revisionTime": "2017-08-21T08:39:46Z"
 		},
 		{
-			"checksumSHA1": "sYl8BgUgUE1qv4/DVLu7VT/kuqA=",
+			"checksumSHA1": "u+NyFeP949Wvk74oU9XoFmMieG8=",
 			"path": "github.com/parnurzeal/gorequest",
 			"revision": "a578a48e8d6ca8b01a3b18314c43c6716bb5f5a3",
 			"revisionTime": "2017-02-20T17:20:57Z"
@@ -283,6 +325,18 @@
 			"path": "github.com/qianlnk/guerrillamail",
 			"revision": "356e8e64acc3452c84aa08f46bcf569a44fd6218",
 			"revisionTime": "2017-05-09T07:12:38Z"
+		},
+		{
+			"checksumSHA1": "70e6Sp6P2GlhWqKTIsBdXDXkz4c=",
+			"path": "github.com/rakyll/statik",
+			"revision": "016ca6fdb1b26618ff8f53fbd1109ff834524f23",
+			"revisionTime": "2017-09-21T04:38:01Z"
+		},
+		{
+			"checksumSHA1": "++Uxr4F++QrnFEbBlQsJ3VuQoNM=",
+			"path": "github.com/rakyll/statik/fs",
+			"revision": "016ca6fdb1b26618ff8f53fbd1109ff834524f23",
+			"revisionTime": "2017-09-21T04:38:01Z"
 		},
 		{
 			"checksumSHA1": "WJtFHWa9TF0GnFSRJwedQ4/5fyk=",
@@ -601,6 +655,36 @@
 			"path": "gopkg.in/inconshreveable/log15.v2/term",
 			"revision": "b105bd37f74e5d9dc7b6ad7806715c7a2b83fd3f",
 			"revisionTime": "2015-09-21T21:38:54Z"
+		},
+		{
+			"checksumSHA1": "1D8GzeoFGUs5FZOoyC2DpQg8c5Y=",
+			"path": "gopkg.in/mgo.v2",
+			"revision": "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+			"revisionTime": "2016-08-18T02:01:20Z"
+		},
+		{
+			"checksumSHA1": "YsB2DChSV9HxdzHaKATllAUKWSI=",
+			"path": "gopkg.in/mgo.v2/bson",
+			"revision": "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+			"revisionTime": "2016-08-18T02:01:20Z"
+		},
+		{
+			"checksumSHA1": "XQsrqoNT1U0KzLxOFcAZVvqhLfk=",
+			"path": "gopkg.in/mgo.v2/internal/json",
+			"revision": "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+			"revisionTime": "2016-08-18T02:01:20Z"
+		},
+		{
+			"checksumSHA1": "LEvMCnprte47qdAxWvQ/zRxVF1U=",
+			"path": "gopkg.in/mgo.v2/internal/sasl",
+			"revision": "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+			"revisionTime": "2016-08-18T02:01:20Z"
+		},
+		{
+			"checksumSHA1": "+1WDRPaOphSCmRMxVPIPBV4aubc=",
+			"path": "gopkg.in/mgo.v2/internal/scram",
+			"revision": "3f83fa5005286a7fe593b055f0d7771a7dce4655",
+			"revisionTime": "2016-08-18T02:01:20Z"
 		},
 		{
 			"checksumSHA1": "pSRJpgNXXmuUf88IhYYNhM+crAU=",
