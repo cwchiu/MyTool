@@ -13,6 +13,10 @@ func SetupCryptoCommand(parentCmd *cobra.Command) {
 	crypto.SetupSignCommand(rootCmd)
 	crypto.SetupVerifyCommand(rootCmd)
 	crypto.SetupGenRsaKeyCommand(rootCmd)
+	crypto.SetupRsaKeyEncryptCommand(rootCmd)
+	crypto.SetupRsaKeyDecryptCommand(rootCmd)
+	crypto.SetupAesEncryptCommand(rootCmd)
+	crypto.SetupAesDecryptCommand(rootCmd)
 
 	parentCmd.AddCommand(rootCmd)
 }
