@@ -1,28 +1,27 @@
-﻿package crypto
-
+package crypto
 
 import (
-    // "fmt"
-    "crypto/aes"
-    "crypto/cipher"
-    "io"
-    "io/ioutil"
-    "crypto/rand"
-    "crypto/rsa"
-    "crypto/sha512"
-    "crypto/x509"
-    "encoding/pem"
+	"crypto/aes"
+	"crypto/cipher"
+	"crypto/rand"
+	"crypto/rsa"
+	"crypto/sha512"
+	"crypto/x509"
+	"encoding/pem"
+	"io"
+	"io/ioutil"
+	math_rand "math/rand"
+	"time"
 )
 
-
-func aesDecrypt(fn string, keystring string)  {
+func aesDecrypt(fn string, keystring string) {
 	// Byte array of the string
 	// ciphertext := []byte(cipherstring)
-    ciphertext, err := ioutil.ReadFile(fn)
-    if err != nil {
-        panic(err)
-    }
-    
+	ciphertext, err := ioutil.ReadFile(fn)
+	if err != nil {
+		panic(err)
+	}
+
 	// Key
 	key := []byte(keystring)
 
@@ -50,19 +49,19 @@ func aesDecrypt(fn string, keystring string)  {
 	// Decrypt bytes from ciphertext
 	stream.XORKeyStream(ciphertext, ciphertext)
 
-    err = ioutil.WriteFile("dec-" + fn, ciphertext, 0666)
-    if err != nil {
-        panic(err)
-    }
+	err = ioutil.WriteFile("dec-"+fn, ciphertext, 0666)
+	if err != nil {
+		panic(err)
+	}
 }
 
-func aesEncrypt(fn, keystring string)  {
+func aesEncrypt(fn, keystring string) {
 	// Byte array of the string
 	// plaintext := []byte(plainstring)
-    plainstring, err := ioutil.ReadFile(fn)
-    if err != nil {
-        panic(err)
-    }
+	plainstring, err := ioutil.ReadFile(fn)
+	if err != nil {
+		panic(err)
+	}
 	// Key
 	key := []byte(keystring)
 
@@ -89,77 +88,91 @@ func aesEncrypt(fn, keystring string)  {
 
 	// Encrypt bytes from plaintext to ciphertext
 	stream.XORKeyStream(ciphertext[aes.BlockSize:], plainstring)
-    err = ioutil.WriteFile("enc-" + fn, ciphertext, 0666)
-    if err != nil {
-        panic(err)
-    }
+	err = ioutil.WriteFile("enc-"+fn, ciphertext, 0666)
+	if err != nil {
+		panic(err)
+	}
 
 }
 
 func rsaKeyEncrypt(fn, public_key string) {
 
-    bs, err := ioutil.ReadFile(public_key)
-    if err != nil {
-        panic(err)
-    }
+	bs, err := ioutil.ReadFile(public_key)
+	if err != nil {
+		panic(err)
+	}
 
-    block, _ := pem.Decode(bs)
-    if block == nil {
-        panic("rsa public_key error")
-    }
-    pub, err := x509.ParsePKIXPublicKey(block.Bytes)
-    if err != nil {
-        panic(err)
-    }
-    rsaPub, ok := pub.(*rsa.PublicKey)
-    if !ok {
-        panic("Value returned from ParsePKIXPublicKey was not an RSA public key")
-    }
-    
-    msg, err := ioutil.ReadFile(fn)
-    if err != nil {
-        panic(err)
-    }
-    
-    encryptOAEP, err := rsa.EncryptOAEP(sha512.New(), rand.Reader, rsaPub, msg, nil)
-    if err != nil {
-        panic(err)
-    }
-    
-    err = ioutil.WriteFile("enc-" + fn, encryptOAEP, 0666)
-    if err != nil {
-        panic(err)
-    }
+	block, _ := pem.Decode(bs)
+	if block == nil {
+		panic("rsa public_key error")
+	}
+	pub, err := x509.ParsePKIXPublicKey(block.Bytes)
+	if err != nil {
+		panic(err)
+	}
+	rsaPub, ok := pub.(*rsa.PublicKey)
+	if !ok {
+		panic("Value returned from ParsePKIXPublicKey was not an RSA public key")
+	}
+
+	msg, err := ioutil.ReadFile(fn)
+	if err != nil {
+		panic(err)
+	}
+
+	encryptOAEP, err := rsa.EncryptOAEP(sha512.New(), rand.Reader, rsaPub, msg, nil)
+	if err != nil {
+		panic(err)
+	}
+
+	err = ioutil.WriteFile("enc-"+fn, encryptOAEP, 0666)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func rsaKeyDecrypt(fn, private_key string) {
-    privateKeyData, err := ioutil.ReadFile(private_key)
-    if err != nil {
-        panic(err)
-    }
+	privateKeyData, err := ioutil.ReadFile(private_key)
+	if err != nil {
+		panic(err)
+	}
 
-    // 解析出私鑰
-    priBlock, _ := pem.Decode([]byte(privateKeyData))
-    if priBlock == nil {
-        panic("rsa private_key error")
-    }
-    priKey, err := x509.ParsePKCS1PrivateKey(priBlock.Bytes)
-    if err != nil {
-        panic(err)
-    }
-    msg, err := ioutil.ReadFile(fn)
-    if err != nil {
-        panic(err)
-    }
-    
-    // 解密RSA-OAEP方式加密後的內容
-    decryptOAEP, err := rsa.DecryptOAEP(sha512.New(), rand.Reader, priKey, msg, nil)
-    if err != nil {
-        panic(err)
-    }
-    
-    err = ioutil.WriteFile("dec-" + fn, decryptOAEP, 0666)
-    if err != nil {
-        panic(err)
-    }
+	// 解析出私鑰
+	priBlock, _ := pem.Decode([]byte(privateKeyData))
+	if priBlock == nil {
+		panic("rsa private_key error")
+	}
+	priKey, err := x509.ParsePKCS1PrivateKey(priBlock.Bytes)
+	if err != nil {
+		panic(err)
+	}
+	msg, err := ioutil.ReadFile(fn)
+	if err != nil {
+		panic(err)
+	}
+
+	// 解密RSA-OAEP方式加密後的內容
+	decryptOAEP, err := rsa.DecryptOAEP(sha512.New(), rand.Reader, priKey, msg, nil)
+	if err != nil {
+		panic(err)
+	}
+
+	err = ioutil.WriteFile("dec-"+fn, decryptOAEP, 0666)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func init() {
+	math_rand.Seed(time.Now().UnixNano())
+}
+
+var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+func rands(n int) string {
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = letterRunes[math_rand.Intn(len(letterRunes))]
+	}
+	return string(b)
 }
