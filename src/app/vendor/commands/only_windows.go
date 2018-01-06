@@ -5,14 +5,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupWindowsCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{
+func init() {
+	cmd := &cobra.Command{
 		Use:   "windows",
 		Short: "Windows 相關",
 	}
 
-	windows.SetupLockCommand(rootCmd)
-	windows.SetupWord2TxtCommand(rootCmd)
+	windows.SetupLockCommand(cmd)
+	windows.SetupWord2TxtCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

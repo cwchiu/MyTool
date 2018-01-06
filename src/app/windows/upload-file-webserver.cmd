@@ -1,0 +1,1 @@
+curl -F uploadfile=@server.key http://127.0.0.1:28080/upload

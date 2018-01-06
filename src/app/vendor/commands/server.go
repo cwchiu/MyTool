@@ -5,20 +5,20 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupServerCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "server", Short: "服務器"}
+func init() {
+	cmd := &cobra.Command{Use: "server", Short: "服務器"}
 
-	server.SetupCharGenCommand(rootCmd)
-	server.SetupDiscardCommand(rootCmd)
-	server.SetupEchoCommand(rootCmd)
-	server.SetupQuoteCommand(rootCmd)
-	server.SetupDaytimeCommand(rootCmd)
-	server.SetupProxyCommand(rootCmd)
-	server.SetupWebCommand(rootCmd)
-	server.SetupFtpCommand(rootCmd)
-	server.SetupSSHCommand(rootCmd)
-	server.SetupTcpPortForwardCommand(rootCmd)
-	server.SetupTunnelCommand(rootCmd)
+	server.SetupCharGenCommand(cmd)
+	server.SetupDiscardCommand(cmd)
+	server.SetupEchoCommand(cmd)
+	server.SetupQuoteCommand(cmd)
+	server.SetupDaytimeCommand(cmd)
+	server.SetupProxyCommand(cmd)
+	server.SetupWebCommand(cmd)
+	server.SetupFtpCommand(cmd)
+	server.SetupSSHCommand(cmd)
+	server.SetupTcpPortForwardCommand(cmd)
+	server.SetupTunnelCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

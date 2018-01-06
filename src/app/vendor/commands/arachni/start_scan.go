@@ -25,14 +25,14 @@ func SetupScanStartCommand(rootCmd *cobra.Command) {
 
 			inst := CreateArachni(server, username, password)
 			// "http://192.168.99.100:7331"
-			// m := map[string]interface{}{
-			// "checks": []string{"xss*", "sql*"},
-			// "audit": map[string]interface{}{
-			// "elements": []string{"links", "forms"},
-			// },
-			// }
-			// ret, err := inst.StartScan("http://demo.testfire.net/default.aspx", &m)
-			ret, err := inst.StartScan(args[0], nil)
+			m := map[string]interface{}{
+			"checks": []string{"xss*", "sql*"},
+			"audit": map[string]interface{}{
+			"elements": []string{"links", "forms"},
+			},
+			}
+			ret, err := inst.StartScan("http://demo.testfire.net/default.aspx", &m)
+			// ret, err := inst.StartScan(args[0], nil)
 			if err != nil {
 				panic(err)
 			}

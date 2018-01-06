@@ -11,7 +11,7 @@ import (
 )
 
 // https://github.com/robertkrimen/otto/blob/master/otto/main.go
-func SetupJsCommand(rootCmd *cobra.Command) {
+func init() {
 	var use_underscore bool
 	cmd := &cobra.Command{
 		Use:   "js [filename]",

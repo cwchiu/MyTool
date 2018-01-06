@@ -20,12 +20,11 @@ func tempFileName(prefix, suffix string) string {
 	return filepath.Join(os.TempDir(), prefix+hex.EncodeToString(randBytes)+suffix)
 }
 
-func SetupMD2HtmlCommand(rootCmd *cobra.Command) {
+func init() {
 	var flagvar bool
 	cmd := &cobra.Command{
 		Use:   "md2html",
 		Short: "markdown to html",
-		Long:  `markdown to html`,
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(args) < 1 {
 				panic("need an filename")

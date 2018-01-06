@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupSSHCommand(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "ssh", Short: "ssh"}
 
 	ssh.SetupExecCommand(cmd)
@@ -13,5 +13,5 @@ func SetupSSHCommand(parentCmd *cobra.Command) {
 	ssh.SetupDownloadCommand(cmd)
 	ssh.SetupTtyCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

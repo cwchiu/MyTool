@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupSubtitleCommand(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "subtitle", Short: "字幕"}
 
 	subtitle.SetupAss2SrtCommand(cmd)
 	subtitle.SetupSrt2AssCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

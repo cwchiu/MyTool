@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupImageCommand(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "image", Short: "影像"}
 
 	image.SetupToPngCommand(cmd)
@@ -13,5 +13,5 @@ func SetupImageCommand(parentCmd *cobra.Command) {
 	image.SetupToJpegCommand(cmd)
 	image.SetupToAsciiCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

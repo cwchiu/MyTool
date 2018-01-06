@@ -5,14 +5,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupClipCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{
+func init() {
+	cmd := &cobra.Command{
 		Use:   "clip",
 		Short: "剪貼簿",
 	}
 
-	clip.SetupGetCommand(rootCmd)
-	clip.SetupSetCommand(rootCmd)
+	clip.SetupGetCommand(cmd)
+	clip.SetupSetCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

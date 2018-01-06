@@ -318,11 +318,15 @@ func SetupWebCommand(rootCmd *cobra.Command) {
 
 				}
 			}
-
+			server := &http.Server{
+				Addr:           fmt.Sprintf(":%d", port),
+				ReadTimeout:    30 * time.Second,
+				WriteTimeout:   30 * time.Second,
+				MaxHeaderBytes: 1 << 20}
 			if protocol == "https" {
-				err = http.ListenAndServeTLS(fmt.Sprintf(":%d", port), filename_cert, filename_key, nil)
+				err = server.ListenAndServeTLS(filename_cert, filename_key)
 			} else {
-				err = http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+				err = server.ListenAndServe()
 			}
 
 			if err != nil {

@@ -5,26 +5,25 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupFsCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "fs", Short: "檔案相關操作"}
+func init() {
+	cmd := &cobra.Command{Use: "fs", Short: "檔案相關操作"}
 
-	fs.SetupEmptyCommand(rootCmd)
-	fs.SetupInfoCommand(rootCmd)
-	fs.SetupTruncatCommand(rootCmd)
-	fs.SetupCatCommand(rootCmd)
-	fs.SetupMvCommand(rootCmd)
-	fs.SetupRmCommand(rootCmd)
-	fs.SetupZipCommand(rootCmd)
-	fs.SetupUnzipCommand(rootCmd)
-	fs.SetupLsCommand(rootCmd)
-	fs.SetupTreeCommand(rootCmd)
-	fs.SetupCpCommand(rootCmd)
-	fs.SetupNlCommand(rootCmd)
-	fs.SetupDos2UnixCommand(rootCmd)
-	fs.SetupUnix2DosCommand(rootCmd)
-	fs.SetupCutCommand(rootCmd)
-	fs.SetupGrepCommand(rootCmd)
+	fs.SetupEmptyCommand(cmd)
+	fs.SetupInfoCommand(cmd)
+	fs.SetupTruncatCommand(cmd)
+	fs.SetupCatCommand(cmd)
+	fs.SetupMvCommand(cmd)
+	fs.SetupRmCommand(cmd)
+	fs.SetupZipCommand(cmd)
+	fs.SetupUnzipCommand(cmd)
+	fs.SetupLsCommand(cmd)
+	fs.SetupTreeCommand(cmd)
+	fs.SetupCpCommand(cmd)
+	fs.SetupNlCommand(cmd)
+	fs.SetupDos2UnixCommand(cmd)
+	fs.SetupUnix2DosCommand(cmd)
+	fs.SetupCutCommand(cmd)
+	fs.SetupGrepCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
-	// rootCmd.Execute()
+	rootCmd.AddCommand(cmd)
 }

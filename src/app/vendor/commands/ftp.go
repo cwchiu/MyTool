@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupFtpCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "ftp", Short: "ftp"}
+func init() {
+	cmd := &cobra.Command{Use: "ftp", Short: "ftp"}
 
-	ftp.SetupDownloadCommand(rootCmd)
-	ftp.SetupUploadCommand(rootCmd)
+	ftp.SetupDownloadCommand(cmd)
+	ftp.SetupUploadCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

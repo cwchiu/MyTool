@@ -5,18 +5,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupCryptoCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "crypto", Short: "加密"}
+func init() {
+	cmd := &cobra.Command{Use: "crypto", Short: "加密"}
 
-	crypto.SetupCertCommand(rootCmd)
-	crypto.SetupApkCertCommand(rootCmd)
-	crypto.SetupSignCommand(rootCmd)
-	crypto.SetupVerifyCommand(rootCmd)
-	crypto.SetupGenRsaKeyCommand(rootCmd)
-	crypto.SetupRsaKeyEncryptCommand(rootCmd)
-	crypto.SetupRsaKeyDecryptCommand(rootCmd)
-	crypto.SetupAesEncryptCommand(rootCmd)
-	crypto.SetupAesDecryptCommand(rootCmd)
+	crypto.SetupCertCommand(cmd)
+	crypto.SetupApkCertCommand(cmd)
+	crypto.SetupSignCommand(cmd)
+	crypto.SetupVerifyCommand(cmd)
+	crypto.SetupGenRsaKeyCommand(cmd)
+	crypto.SetupRsaKeyEncryptCommand(cmd)
+	crypto.SetupRsaKeyDecryptCommand(cmd)
+	crypto.SetupAesEncryptCommand(cmd)
+	crypto.SetupAesDecryptCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

@@ -5,14 +5,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupDateCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "date", Short: "日期/時間"}
+func init() {
+	cmd := &cobra.Command{Use: "date", Short: "日期/時間"}
 
-	date.SetupNowCommand(rootCmd)
-	date.SetupT2SCommand(rootCmd)
-	date.SetupS2TCommand(rootCmd)
-	date.SetupS2LCommand(rootCmd)
-	date.SetupL2SCommand(rootCmd)
+	date.SetupNowCommand(cmd)
+	date.SetupT2SCommand(cmd)
+	date.SetupS2TCommand(cmd)
+	date.SetupS2LCommand(cmd)
+	date.SetupL2SCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

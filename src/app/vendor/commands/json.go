@@ -5,10 +5,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupJsonCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "json", Short: "json 格式化"}
+func init() {
+	cmd := &cobra.Command{Use: "json", Short: "json 格式化"}
 
-	json.SetupPrettyCommand(rootCmd)
+	json.SetupPrettyCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func SetupHexCommand(rootCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{
 		Use:   "hex",
 		Short: "hex view data",

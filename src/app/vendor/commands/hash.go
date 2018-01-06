@@ -5,15 +5,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupHashCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{Use: "hash", Short: "雜湊計算"}
+func init() {
+	cmd := &cobra.Command{Use: "hash", Short: "雜湊計算"}
 
-	hash.SetupMd5Command(rootCmd)
-	hash.SetupSha1Command(rootCmd)
-	hash.SetupSha256Command(rootCmd)
-	hash.SetupSha384Command(rootCmd)
-	hash.SetupSha512Command(rootCmd)
-	hash.SetupCrc32Command(rootCmd)
+	hash.SetupMd5Command(cmd)
+	hash.SetupSha1Command(cmd)
+	hash.SetupSha256Command(cmd)
+	hash.SetupSha384Command(cmd)
+	hash.SetupSha512Command(cmd)
+	hash.SetupCrc32Command(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }

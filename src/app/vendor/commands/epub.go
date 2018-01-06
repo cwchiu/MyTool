@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupEpubCommand(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "epub", Short: "epub 工具"}
 
 	epub.SetupInfoCommand(cmd)
 	epub.SetupExtractCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

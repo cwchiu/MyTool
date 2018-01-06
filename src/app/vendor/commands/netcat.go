@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupNetcatCommand(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "netcat", Short: "netcat"}
 
 	netcat.SetupServerCommand(cmd)
 	netcat.SetupClientCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

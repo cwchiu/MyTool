@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupMp3Command(parentCmd *cobra.Command) {
+func init() {
 	cmd := &cobra.Command{Use: "mp3", Short: "mp3 播放/資訊"}
 
 	mp3.SetupPlayCommand(cmd)
 	mp3.SetupInfoCommand(cmd)
 
-	parentCmd.AddCommand(cmd)
+	rootCmd.AddCommand(cmd)
 }

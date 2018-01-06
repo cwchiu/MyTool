@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupPinyinCommand(rootCmd *cobra.Command) {
+func init() {
 	var mode int
 	cmd := &cobra.Command{
 		Use:   "pinyin <word>",

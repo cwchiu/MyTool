@@ -5,14 +5,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func SetupUrlCommand(parentCmd *cobra.Command) {
-	rootCmd := &cobra.Command{
+func init() {
+	cmd := &cobra.Command{
 		Use:   "url",
 		Short: "url 相關",
 	}
 
-	url.SetupEncodeCommand(rootCmd)
-	url.SetupDecodeCommand(rootCmd)
+	url.SetupEncodeCommand(cmd)
+	url.SetupDecodeCommand(cmd)
 
-	parentCmd.AddCommand(rootCmd)
+	rootCmd.AddCommand(cmd)
 }
