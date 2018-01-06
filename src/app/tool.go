@@ -2,6 +2,7 @@ package main
 
 import (
 	commands "commands"
+	arachni "commands/arachni"
 	"fmt"
 	"github.com/spf13/cobra"
     _ "statik" 
@@ -49,5 +50,6 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupSubtitleCommand(rootCmd)
 	commands.SetupProxyPoolCommand(rootCmd)
 
+    arachni.SetupArachniCommand(rootCmd)
 	rootCmd.Execute()
 }
