@@ -3,6 +3,7 @@ package main
 import (
 	commands "commands"
 	arachni "commands/arachni"
+	clamav "commands/clamav"
 	"fmt"
 	"github.com/spf13/cobra"
     _ "statik" 
@@ -12,7 +13,7 @@ import (
 func main() {
 	defer func() {
 		if err := recover(); err != nil {
-			fmt.Println(err.(string))
+        fmt.Println(err.(string))
 		}
 	}()
 	rootCmd := &cobra.Command{Use: "tool", Long: `我的個人常用工具
@@ -20,7 +21,7 @@ Site: https://chuiwenchiu.wordpress.com
 Github: https://github.com/cwchiu/MyTool
     `}
 	rootCmd.AddCommand(&cobra.Command{Use: "version", Short: "版本資訊", Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Version: 0.0.1")
+		fmt.Println("Version: 0.0.2")
 	}})
 	commands.SetupFsCommand(rootCmd)
 	commands.SetupWebCommand(rootCmd)
@@ -51,5 +52,6 @@ Github: https://github.com/cwchiu/MyTool
 	commands.SetupProxyPoolCommand(rootCmd)
 
     arachni.SetupArachniCommand(rootCmd)
+    clamav.SetupCommand(rootCmd)
 	rootCmd.Execute()
 }
