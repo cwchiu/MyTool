@@ -19,6 +19,7 @@ func init() {
 	server.SetupSSHCommand(cmd)
 	server.SetupTcpPortForwardCommand(cmd)
 	server.SetupTunnelCommand(cmd)
+	server.SetupSMTPCommand(cmd)
 
 	rootCmd.AddCommand(cmd)
 }
