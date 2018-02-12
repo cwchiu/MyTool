@@ -37,6 +37,7 @@ func init() {
 	web.SetupEtherCommand(cmd)
 	web.SetupZipCodeCommand(cmd)
 	web.SetupWeatherCommand(cmd)
+	web.SetupPhoneCommand(cmd)
 
 	rootCmd.AddCommand(cmd)
 }
