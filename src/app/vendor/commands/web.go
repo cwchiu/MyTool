@@ -38,6 +38,7 @@ func init() {
 	web.SetupZipCodeCommand(cmd)
 	web.SetupWeatherCommand(cmd)
 	web.SetupPhoneCommand(cmd)
+	web.SetupPasteBinCommand(cmd)
 
 	rootCmd.AddCommand(cmd)
 }

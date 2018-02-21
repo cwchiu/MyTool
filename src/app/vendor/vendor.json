@@ -57,6 +57,12 @@
 			"revisionTime": "2017-06-18T05:38:12Z"
 		},
 		{
+			"checksumSHA1": "N0TPqdSV4m10rDy4Uk/RZQQYlJI=",
+			"path": "github.com/cwchiu/go-pastebin",
+			"revision": "e19cd4f8d4a1db404ff3a52ea0f02db45de9f181",
+			"revisionTime": "2018-02-21T14:24:48Z"
+		},
+		{
 			"checksumSHA1": "IkAYIhxmvTQKEJvclIZJoVh9ats=",
 			"path": "github.com/dgrijalva/jwt-go",
 			"revision": "a539ee1a749a2b895533f979515ac7e6e0f5b650",
@@ -747,6 +753,12 @@
 			"revisionTime": "2017-12-24T20:31:28Z"
 		},
 		{
+			"checksumSHA1": "xsaHqy6/sonLV6xIxTNh4FfkWbU=",
+			"path": "gopkg.in/asn1-ber.v1",
+			"revision": "379148ca0225df7a432012b8df0355c2a2063ac0",
+			"revisionTime": "2017-05-11T16:59:59Z"
+		},
+		{
 			"checksumSHA1": "CpJjPOx+uL4tx0L2q67LgNvhwvc=",
 			"path": "gopkg.in/cheggaaa/pb.v1",
 			"revision": "657164d0228d6bebe316fdf725c69f131a50fb10",
@@ -769,6 +781,12 @@
 			"path": "gopkg.in/inconshreveable/log15.v2/term",
 			"revision": "b105bd37f74e5d9dc7b6ad7806715c7a2b83fd3f",
 			"revisionTime": "2015-09-21T21:38:54Z"
+		},
+		{
+			"checksumSHA1": "IElTu6wDmpCv8h3JPXAHjuy0Gb8=",
+			"path": "gopkg.in/ldap.v2",
+			"revision": "bb7a9ca6e4fbc2129e3db588a34bc970ffe811a9",
+			"revisionTime": "2017-11-23T04:56:18Z"
 		},
 		{
 			"checksumSHA1": "1D8GzeoFGUs5FZOoyC2DpQg8c5Y=",
