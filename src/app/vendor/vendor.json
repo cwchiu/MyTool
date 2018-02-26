@@ -123,6 +123,24 @@
 			"revisionTime": "2017-07-12T17:44:59Z"
 		},
 		{
+			"checksumSHA1": "w01kP96jx5UAf+uWB8m0w8Xghas=",
+			"path": "github.com/golang/freetype",
+			"revision": "e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4",
+			"revisionTime": "2017-06-09T00:35:04Z"
+		},
+		{
+			"checksumSHA1": "aJ/kX/eCUlrCJBZ26Hwh/RXzAIw=",
+			"path": "github.com/golang/freetype/raster",
+			"revision": "e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4",
+			"revisionTime": "2017-06-09T00:35:04Z"
+		},
+		{
+			"checksumSHA1": "I3u9Uh9thka1gsgch6QEiPkaAr0=",
+			"path": "github.com/golang/freetype/truetype",
+			"revision": "e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4",
+			"revisionTime": "2017-06-09T00:35:04Z"
+		},
+		{
 			"checksumSHA1": "+uvL6lrIFyv9OZ9OxIGBYR469eU=",
 			"path": "github.com/gopherjs/gopherjs/js",
 			"revision": "2b1d432c8a82c9bff0b0baffaeb3ec6e92974112",
@@ -331,6 +349,12 @@
 			"path": "github.com/mitchellh/mapstructure",
 			"revision": "06020f85339e21b2478f756a78e295255ffa4d6a",
 			"revisionTime": "2017-10-17T17:18:08Z"
+		},
+		{
+			"checksumSHA1": "dJBn3iEG/+FXWlu7wc3qadvn8uU=",
+			"path": "github.com/mojocn/base64Captcha",
+			"revision": "8c983452abdab9be32721b5faefca09ca4cfe33b",
+			"revisionTime": "2018-02-23T01:56:14Z"
 		},
 		{
 			"checksumSHA1": "qy1o/2NzswTMAoPXgdUxg4/g9tI=",
@@ -619,6 +643,18 @@
 			"path": "golang.org/x/crypto/ssh/terminal",
 			"revision": "eb71ad9bd329b5ac0fd0148dd99bd62e8be8e035",
 			"revisionTime": "2017-08-07T10:11:13Z"
+		},
+		{
+			"checksumSHA1": "+U1IB5N4LDS74y4fXjARb4/S4IE=",
+			"path": "golang.org/x/image/font",
+			"revision": "12117c17ca67ffa1ce22e9409f3b0b0a93ac08c7",
+			"revisionTime": "2017-12-12T19:22:48Z"
+		},
+		{
+			"checksumSHA1": "euzvwlMLxyD0hwc+raoVsDLv6j4=",
+			"path": "golang.org/x/image/math/fixed",
+			"revision": "12117c17ca67ffa1ce22e9409f3b0b0a93ac08c7",
+			"revisionTime": "2017-12-12T19:22:48Z"
 		},
 		{
 			"checksumSHA1": "zdekzNuFGSoxAZ8cURGsrhBObZs=",
