@@ -1,4 +1,4 @@
-package barcode
+package base64
 
 import (
 	"bufio"
