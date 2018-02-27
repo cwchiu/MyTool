@@ -39,6 +39,12 @@
 			"revisionTime": "2017-10-01T11:04:41Z"
 		},
 		{
+			"checksumSHA1": "lbE4q2dpUgue10EEx8eutP36vzo=",
+			"path": "github.com/boltdb/bolt",
+			"revision": "9da31745363232bc1e27dbab3569e77383a51585",
+			"revisionTime": "2017-11-20T01:03:07Z"
+		},
+		{
 			"checksumSHA1": "LDsOOFd/3TnT4oSGhAQwl8kH1gk=",
 			"path": "github.com/boombuler/barcode",
 			"revision": "56ef0af91246fb5279df4f87bc3daf1bf7cb9e89",
