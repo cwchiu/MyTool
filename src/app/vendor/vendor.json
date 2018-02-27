@@ -57,6 +57,12 @@
 			"revisionTime": "2017-06-18T05:38:12Z"
 		},
 		{
+			"checksumSHA1": "tvgTxGCAZMuVe83lumvVYDWr3YM=",
+			"path": "github.com/cavaliercoder/grab",
+			"revision": "b17a3a3be72412d6f80665dd13106c9f851596f2",
+			"revisionTime": "2018-02-09T04:47:31Z"
+		},
+		{
 			"checksumSHA1": "N0TPqdSV4m10rDy4Uk/RZQQYlJI=",
 			"path": "github.com/cwchiu/go-pastebin",
 			"revision": "e19cd4f8d4a1db404ff3a52ea0f02db45de9f181",
@@ -343,6 +349,12 @@
 			"path": "github.com/microcosm-cc/bluemonday",
 			"revision": "e79763773ab6222ca1d5a7cbd9d62d83c1f77081",
 			"revisionTime": "2016-12-02T14:38:24Z"
+		},
+		{
+			"checksumSHA1": "XTeOihCDhjG6ltUKExoJ2uEzShk=",
+			"path": "github.com/miekg/dns",
+			"revision": "5364553f1ee9cddc7ac8b62dce148309c386695b",
+			"revisionTime": "2018-01-25T10:38:03Z"
 		},
 		{
 			"checksumSHA1": "gILp4IL+xwXLH6tJtRLrnZ56F24=",
@@ -693,6 +705,12 @@
 			"revisionTime": "2017-07-17T16:15:53Z"
 		},
 		{
+			"checksumSHA1": "NjyXtXsaf0ulRJn6HQSP1FqGL4A=",
+			"path": "golang.org/x/net/bpf",
+			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
+			"revisionTime": "2018-02-18T17:15:52Z"
+		},
+		{
 			"checksumSHA1": "dr5+PfIRzXeN+l1VG+s0lea9qz8=",
 			"path": "golang.org/x/net/context",
 			"revision": "859d1a86bb617c0c20d154590c3c5d3fcb670b07",
@@ -709,6 +727,30 @@
 			"path": "golang.org/x/net/html/atom",
 			"revision": "054b33e6527139ad5b1ec2f6232c3b175bd9a30c",
 			"revisionTime": "2017-07-05T22:25:54Z"
+		},
+		{
+			"checksumSHA1": "5JWn/wMC+EWNDKI/AYE4JifQF54=",
+			"path": "golang.org/x/net/internal/iana",
+			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
+			"revisionTime": "2018-02-18T17:15:52Z"
+		},
+		{
+			"checksumSHA1": "WnI4058Oj6W4YSvyXAnK3qCKqvo=",
+			"path": "golang.org/x/net/internal/socket",
+			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
+			"revisionTime": "2018-02-18T17:15:52Z"
+		},
+		{
+			"checksumSHA1": "zPTKyZ1C55w1fk1W+/qGE15jaek=",
+			"path": "golang.org/x/net/ipv4",
+			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
+			"revisionTime": "2018-02-18T17:15:52Z"
+		},
+		{
+			"checksumSHA1": "3L3n7qKMO9X8E1ibA5mExKvwbmI=",
+			"path": "golang.org/x/net/ipv6",
+			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
+			"revisionTime": "2018-02-18T17:15:52Z"
 		},
 		{
 			"checksumSHA1": "+7gSOeJWKSUhXho9cQPtyzJL+ok=",
@@ -793,6 +835,10 @@
 			"path": "gopkg.in/asn1-ber.v1",
 			"revision": "379148ca0225df7a432012b8df0355c2a2063ac0",
 			"revisionTime": "2017-05-11T16:59:59Z"
+		},
+		{
+			"path": "gopkg.in/cavaliercoder/grab",
+			"revision": ""
 		},
 		{
 			"checksumSHA1": "CpJjPOx+uL4tx0L2q67LgNvhwvc=",

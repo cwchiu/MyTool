@@ -3,7 +3,6 @@ package web
 import (
 	"fmt"
 	"github.com/parnurzeal/gorequest"
-	"github.com/spf13/cobra"
 	"io"
 	"net/http"
 	"net/http/httputil"
@@ -131,24 +130,6 @@ func downloadFile(url string, dest string, verbose bool) {
 	} else {
 		io.Copy(os.Stdout, resp.Body)
 	}
-}
-
-func SetupDownloadCommand(rootCmd *cobra.Command) {
-	var file string
-	var verbose bool
-	cmd := &cobra.Command{
-		Use: "http-get <url>",
-		Run: func(cmd *cobra.Command, args []string) {
-			if len(args) < 1 {
-				panic("required <url>")
-			}
-			downloadFile(args[0], file, verbose)
-		},
-	}
-	cmd.Flags().StringVarP(&file, "file", "f", "", "儲存檔案")
-	cmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "除錯")
-	rootCmd.AddCommand(cmd)
-
 }
 
 func getRequest(mobile bool, debug bool) *gorequest.SuperAgent {
