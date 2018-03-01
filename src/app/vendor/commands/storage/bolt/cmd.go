@@ -48,7 +48,7 @@ func setupGetCommand(rootCmd *cobra.Command) {
 func setupScanCommand(rootCmd *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:   "scan <database> <bucket>",
-		Short: "掃描 buket",
+		Short: "掃描 bucket",
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(args) < 2 {
 				panic("<database> <bucket>")
@@ -68,12 +68,36 @@ func setupScanCommand(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(cmd)
 }
 
+func setupListBucketCommand(rootCmd *cobra.Command) {
+	cmd := &cobra.Command{
+		Use:   "buckets <database>",
+		Short: "bucket 列表",
+		Run: func(cmd *cobra.Command, args []string) {
+			if len(args) < 1 {
+				panic("<database>")
+			}
+			err := lib.ListBucket(args[0], func(name string) error {
+				fmt.Println(name)
+
+				return nil
+			})
+
+			if err != nil {
+				panic(err)
+			}
+
+		},
+	}
+	rootCmd.AddCommand(cmd)
+}
+
 func SetupCommand(rootCmd *cobra.Command) {
 	cmd := &cobra.Command{Use: "bolt", Short: "bolt"}
 
 	setupPutCommand(cmd)
 	setupGetCommand(cmd)
 	setupScanCommand(cmd)
+	setupListBucketCommand(cmd)
 
 	rootCmd.AddCommand(cmd)
 }

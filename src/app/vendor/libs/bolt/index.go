@@ -7,6 +7,7 @@ import (
 
 type openCalback func(*db.DB) error
 type ScanCallback func(bucket, key, value string) error
+type ScanBacketCallback func(bucket string) error
 
 func openDB(filename string, callback openCalback) error {
 	db, err := db.Open(filename, 0600, nil)
@@ -62,6 +63,19 @@ func Scan(filename, bucket string, callback ScanCallback) error {
 			}
 
 			return nil
+		})
+	})
+}
+
+func ListBucket(filename string, callback ScanBacketCallback) error {
+	return openDB(filename, func(storage *db.DB) error {
+		return storage.View(func(tx *db.Tx) error {
+            tx.ForEach( func(name []byte, _ *db.Bucket) error {
+                callback(string(name))
+                return nil
+            })
+            
+            return nil
 		})
 	})
 }
