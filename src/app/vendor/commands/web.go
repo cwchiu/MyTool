@@ -2,6 +2,7 @@ package commands
 
 import (
 	"commands/web"
+	"commands/web/music163"
 	"github.com/spf13/cobra"
 )
 
@@ -39,6 +40,8 @@ func init() {
 	web.SetupWeatherCommand(cmd)
 	web.SetupPhoneCommand(cmd)
 	web.SetupPasteBinCommand(cmd)
-
+    
+    music163.SetupCommand(cmd)
+    
 	rootCmd.AddCommand(cmd)
 }

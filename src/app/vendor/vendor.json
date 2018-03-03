@@ -393,6 +393,12 @@
 			"revisionTime": "2017-05-10T07:48:58Z"
 		},
 		{
+			"checksumSHA1": "kUqagcesbbz7A2eCwDYntlvrEqs=",
+			"path": "github.com/mattn/go-sqlite3",
+			"revision": "696e2e43cb00dcb1acaf6073e01493e3c4197b75",
+			"revisionTime": "2018-02-18T13:15:52Z"
+		},
+		{
 			"checksumSHA1": "K9I5mARdECpukRlcGk4SX8ebXy0=",
 			"path": "github.com/microcosm-cc/bluemonday",
 			"revision": "e79763773ab6222ca1d5a7cbd9d62d83c1f77081",
@@ -799,6 +805,12 @@
 			"path": "golang.org/x/net/ipv6",
 			"revision": "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb",
 			"revisionTime": "2018-02-18T17:15:52Z"
+		},
+		{
+			"checksumSHA1": "r9l4r3H6FOLQ0c2JaoXpopFjpnw=",
+			"path": "golang.org/x/net/proxy",
+			"revision": "22ae77b79946ea320088417e4d50825671d82d57",
+			"revisionTime": "2018-02-28T15:35:33Z"
 		},
 		{
 			"checksumSHA1": "+7gSOeJWKSUhXho9cQPtyzJL+ok=",
