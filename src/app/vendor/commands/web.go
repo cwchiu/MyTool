@@ -2,7 +2,6 @@ package commands
 
 import (
 	"commands/web"
-	"commands/web/music163"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +25,6 @@ func init() {
 	// web.SetupYoudaoDictCommand(cmd)
 	web.SetupGoogleDnsResolveCommand(cmd)
 	web.SetupGenChineseNameCommand(cmd)
-	web.SetupYoudaoTranslateCommand(cmd)
 	web.SetupGistCommand(cmd)
 	web.SetupSMSCommand(cmd)
 	web.SetupMoreHandlinoCommand(cmd)
@@ -34,14 +32,13 @@ func init() {
 	web.SetupWhosCallCommand(cmd)
 	web.SetupProxyCommand(cmd)
 	web.SetupTinyCommand(cmd)
-	web.SetupYandexTranslateCommand(cmd)
+	web.SetupYoudaoCommand(cmd)
 	web.SetupEtherCommand(cmd)
 	web.SetupZipCodeCommand(cmd)
 	web.SetupWeatherCommand(cmd)
 	web.SetupPhoneCommand(cmd)
 	web.SetupPasteBinCommand(cmd)
-    
-    music163.SetupCommand(cmd)
-    
+	web.SetupMusic163Command(cmd)
+
 	rootCmd.AddCommand(cmd)
 }

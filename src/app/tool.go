@@ -8,7 +8,7 @@ import (
 
 
     
-    // go build -o tool.exe
+// go build -o tool.exe
 func main() {
 	defer func() {
 		if err := recover(); err != nil {

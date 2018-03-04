@@ -1,4 +1,4 @@
-package music163
+package web
 
 import (
 	"fmt"
@@ -64,7 +64,7 @@ func setupDownloadProgramCommand(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(cmd)
 }
 
-func SetupCommand(rootCmd *cobra.Command) {
+func SetupMusic163Command(rootCmd *cobra.Command) {
 	cmd := &cobra.Command{
 		Use:   "music163",
 		Short: "網易雲音樂",

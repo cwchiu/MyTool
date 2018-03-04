@@ -2,10 +2,8 @@ package web
 
 import (
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
-	"github.com/parnurzeal/gorequest"
 	"github.com/spf13/cobra"
-	"strings"
+	"libs/api/whoscall"
 )
 
 func SetupWhosCallCommand(rootCmd *cobra.Command) {
@@ -17,18 +15,13 @@ func SetupWhosCallCommand(rootCmd *cobra.Command) {
 				panic("required <number>")
 			}
 
-			request := gorequest.New()
-			resp, _, err := request.Get(fmt.Sprintf("https://whoscall.com/zh-TW/tw/%s/", args[0])).Set("User-Agent", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)").SetDebug(false).End()
+			result, err := whoscall.Query(args[0])
 			if err != nil {
-				panic(err)
+				fmt.Println(err)
+			} else {
+				fmt.Println(result.Name)
+				fmt.Println(result.Info)
 			}
-			// fmt.Println(body)
-			doc, err2 := goquery.NewDocumentFromResponse(resp)
-			if err2 != nil {
-				panic(err2)
-			}
-			fmt.Println(strings.TrimSpace(doc.Find(".number-info .number-info__name").First().Text()))
-			fmt.Println(strings.TrimSpace(doc.Find(".number-info .number-info__subinfo").First().Text()))
 		},
 	}
 	rootCmd.AddCommand(cmd)
