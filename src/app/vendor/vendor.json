@@ -63,6 +63,12 @@
 			"revisionTime": "2017-06-18T05:38:12Z"
 		},
 		{
+			"checksumSHA1": "ihaJguGbmu/LhB1COfGBS0UP0Bk=",
+			"path": "github.com/c-bata/go-prompt",
+			"revision": "f329ebd2409de559ba256325b8a18b13a145b5d5",
+			"revisionTime": "2018-02-19T16:15:04Z"
+		},
+		{
 			"checksumSHA1": "tvgTxGCAZMuVe83lumvVYDWr3YM=",
 			"path": "github.com/cavaliercoder/grab",
 			"revision": "b17a3a3be72412d6f80665dd13106c9f851596f2",
@@ -399,6 +405,12 @@
 			"revisionTime": "2018-02-18T13:15:52Z"
 		},
 		{
+			"checksumSHA1": "EhfDzLJ9fwmmiN21vzW+m4Ygh74=",
+			"path": "github.com/mattn/go-tty",
+			"revision": "931426f7535ac39720c8909d70ece5a41a2502a6",
+			"revisionTime": "2018-02-19T17:02:47Z"
+		},
+		{
 			"checksumSHA1": "K9I5mARdECpukRlcGk4SX8ebXy0=",
 			"path": "github.com/microcosm-cc/bluemonday",
 			"revision": "e79763773ab6222ca1d5a7cbd9d62d83c1f77081",
@@ -471,6 +483,12 @@
 			"revisionTime": "2017-08-21T08:39:46Z"
 		},
 		{
+			"checksumSHA1": "txsZLJ7XQsUIoAze9dD+XHYJguk=",
+			"path": "github.com/olekukonko/tablewriter",
+			"revision": "b8a9be070da40449e501c3c4730a889e42d87a9e",
+			"revisionTime": "2018-01-30T16:27:43Z"
+		},
+		{
 			"checksumSHA1": "u+NyFeP949Wvk74oU9XoFmMieG8=",
 			"path": "github.com/parnurzeal/gorequest",
 			"revision": "a578a48e8d6ca8b01a3b18314c43c6716bb5f5a3",
@@ -499,6 +517,12 @@
 			"path": "github.com/pkg/sftp",
 			"revision": "98203f5a8333288eb3163b7c667d4260fe1333e9",
 			"revisionTime": "2017-08-23T21:46:20Z"
+		},
+		{
+			"checksumSHA1": "L7dFEYzHkAatKpLgN5g0zvcuPwo=",
+			"path": "github.com/pkg/term/termios",
+			"revision": "b1f72af2d63057363398bec5873d16a98b453312",
+			"revisionTime": "2016-07-05T08:19:19Z"
 		},
 		{
 			"checksumSHA1": "70e6Sp6P2GlhWqKTIsBdXDXkz4c=",
