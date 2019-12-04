@@ -1,0 +1,16 @@
+name: 編譯測試
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        ref: feature-govendor_migrate_go_module
+    - uses: actions/setup-go@v1
+      with:
+        go-version: '1.9.3' # The Go version to download (if necessary) and use.
+
