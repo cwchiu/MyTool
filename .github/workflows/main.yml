@@ -12,5 +12,5 @@ jobs:
         ref: feature-govendor_migrate_go_module
     - uses: actions/setup-go@v1
       with:
-        go-version: '1.9.3' # The Go version to download (if necessary) and use.
-    - run: go build src/main.go
+        go-version: '1.13.4' # The Go version to download (if necessary) and use.
+    - run: cd src && go build
